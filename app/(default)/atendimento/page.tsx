@@ -85,7 +85,7 @@ export default function Atendimento() {
                                     </p>
                                 </div>
                                 <a
-                                    href="https://wa.me/+552122678801?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
+                                    href="https://wa.me/+5521987449385?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-primary w-full"
