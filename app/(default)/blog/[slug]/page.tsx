@@ -97,13 +97,14 @@ const blogPostsData: Record<string, any> = {
 };
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
-export default function BlogPost({ params }: PageProps) {
-    const post = blogPostsData[params.slug];
+export default async function BlogPost({ params }: PageProps) {
+    const { slug } = await params;
+    const post = blogPostsData[slug];
 
     if (!post) {
         return (
