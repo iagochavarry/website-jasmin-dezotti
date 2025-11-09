@@ -30,7 +30,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Depois de anos sofrendo com sinusite crônica, finalmente encontrei alívio. A Dra. Jasmin foi extremamente atenciosa, explicou todo o tratamento e me acompanhou em cada etapa. Hoje respiro muito melhor e minha qualidade de vida mudou completamente.",
-    categories: [1, 3, 5],
+    categories: [1, 2], // Rinologia (sinusite)
   },
   {
     img: TestimonialImg02,
@@ -39,7 +39,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Excelente profissional! Tratei um problema de audição que me incomodava há anos. A doutora foi muito paciente, tirou todas as minhas dúvidas e o resultado foi além das minhas expectativas.",
-    categories: [1, 2, 4],
+    categories: [1, 3], // Otologia (problema de audição)
   },
   {
     img: TestimonialImg03,
@@ -48,7 +48,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "O atendimento foi humanizado e acolhedor desde o primeiro contato. Meu filho tinha problemas recorrentes de otite e graças ao tratamento correto da Dra. Jasmin, ele está curado. Recomendo de olhos fechados!",
-    categories: [1, 2, 5],
+    categories: [1, 3], // Otologia (otite)
   },
   {
     img: TestimonialImg04,
@@ -57,7 +57,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Profissional extremamente competente e atualizada. Realizei uma cirurgia de desvio de septo e o resultado foi perfeito. A recuperação foi tranquila e hoje não tenho mais aqueles problemas de congestão nasal.",
-    categories: [1, 4],
+    categories: [1, 2, 5], // Rinologia + Cirurgias (cirurgia de desvio de septo)
   },
   {
     img: TestimonialImg05,
@@ -66,7 +66,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Sofria muito com rinite alérgica e não conseguia encontrar um tratamento que funcionasse. A Dra. Jasmin foi muito detalhista no diagnóstico e encontrou a melhor solução para o meu caso. Estou muito satisfeita!",
-    categories: [1, 3, 5],
+    categories: [1, 2], // Rinologia (rinite alérgica)
   },
   {
     img: TestimonialImg06,
@@ -75,7 +75,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Médica muito dedicada e atenciosa. Fiz tratamento para zumbido no ouvido e hoje estou muito melhor. Ela sempre estava disponível para tirar dúvidas e me tranquilizar durante o processo.",
-    categories: [1, 3],
+    categories: [1, 3], // Otologia (zumbido no ouvido)
   },
   {
     img: TestimonialImg07,
@@ -84,7 +84,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "A consulta superou minhas expectativas. A doutora me ouviu com atenção, fez todos os exames necessários e explicou cada detalhe do meu diagnóstico. Me senti muito bem cuidada.",
-    categories: [1, 2, 5],
+    categories: [1], // Todos (depoimento genérico)
   },
   {
     img: TestimonialImg08,
@@ -93,7 +93,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Excelente otorrinolaringologista! Tratei um problema vocal que estava me prejudicando no trabalho. A Dra. Jasmin foi muito profissional e o tratamento foi eficaz. Recomendo!",
-    categories: [1, 4],
+    categories: [1, 4], // Laringologia (problema vocal)
   },
   {
     img: TestimonialImg09,
@@ -102,7 +102,7 @@ const testimonials = [
     company: "Paciente",
     content:
       "Estava muito preocupada com minha cirurgia de sinusite, mas a Dra. Jasmin me tranquilizou e explicou tudo com muita clareza. O procedimento foi um sucesso e hoje estou livre dos sintomas que me atormentavam.",
-    categories: [1, 2],
+    categories: [1, 2, 5], // Rinologia + Cirurgias (cirurgia de sinusite)
   },
 ];
 
@@ -217,13 +217,15 @@ export default function Testimonials() {
               className="mx-auto grid max-w-sm items-start gap-6 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3"
               ref={masonryContainer}
             >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="group">
-                  <Testimonial testimonial={testimonial} category={category}>
-                    {testimonial.content}
-                  </Testimonial>
-                </div>
-              ))}
+              {testimonials
+                .filter((testimonial) => testimonial.categories.includes(category))
+                .map((testimonial, index) => (
+                  <div key={index} className="group">
+                    <Testimonial testimonial={testimonial}>
+                      {testimonial.content}
+                    </Testimonial>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -241,17 +243,12 @@ interface TestimonialProps {
     content: string;
     categories: number[];
   };
-  category: number;
   children: React.ReactNode;
 }
 
-export function Testimonial({ testimonial, category, children }: TestimonialProps) {
-  const isVisible = testimonial.categories.includes(category);
-
+export function Testimonial({ testimonial, children }: TestimonialProps) {
   return (
-    <article
-      className={`relative rounded-2xl bg-white border border-[var(--color-accent)] p-5 shadow-sm transition-all duration-300 hover:shadow-md ${!isVisible ? "opacity-30" : ""}`}
-    >
+    <article className="relative rounded-2xl bg-white border border-[var(--color-accent)] p-5 shadow-sm transition-all duration-300 hover:shadow-md">
       <div className="flex flex-col gap-4">
         <div className="opacity-40">
           <Image src={testimonial.clientImg} height={36} alt="Client logo" />
