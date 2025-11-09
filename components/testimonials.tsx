@@ -3,6 +3,7 @@
 import { useState } from "react";
 import useMasonry from "@/utils/useMasonry";
 import Image, { StaticImageData } from "next/image";
+import ScrollIndicator from "@/components/scroll-indicator";
 import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
 import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
 import TestimonialImg03 from "@/public/images/testimonial-03.jpg";
@@ -12,20 +13,10 @@ import TestimonialImg06 from "@/public/images/testimonial-06.jpg";
 import TestimonialImg07 from "@/public/images/testimonial-07.jpg";
 import TestimonialImg08 from "@/public/images/testimonial-08.jpg";
 import TestimonialImg09 from "@/public/images/testimonial-09.jpg";
-import ClientImg01 from "@/public/images/client-logo-01.svg";
-import ClientImg02 from "@/public/images/client-logo-02.svg";
-import ClientImg03 from "@/public/images/client-logo-03.svg";
-import ClientImg04 from "@/public/images/client-logo-04.svg";
-import ClientImg05 from "@/public/images/client-logo-05.svg";
-import ClientImg06 from "@/public/images/client-logo-06.svg";
-import ClientImg07 from "@/public/images/client-logo-07.svg";
-import ClientImg08 from "@/public/images/client-logo-08.svg";
-import ClientImg09 from "@/public/images/client-logo-09.svg";
 
 const testimonials = [
   {
     img: TestimonialImg01,
-    clientImg: ClientImg01,
     name: "Maria Silva",
     company: "Paciente",
     content:
@@ -34,7 +25,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg02,
-    clientImg: ClientImg02,
     name: "Carlos Mendes",
     company: "Paciente",
     content:
@@ -43,7 +33,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg03,
-    clientImg: ClientImg03,
     name: "Ana Paula Costa",
     company: "Paciente",
     content:
@@ -52,7 +41,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg04,
-    clientImg: ClientImg04,
     name: "Roberto Santos",
     company: "Paciente",
     content:
@@ -61,7 +49,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg05,
-    clientImg: ClientImg05,
     name: "Juliana Oliveira",
     company: "Paciente",
     content:
@@ -70,7 +57,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg06,
-    clientImg: ClientImg06,
     name: "Pedro Alves",
     company: "Paciente",
     content:
@@ -79,7 +65,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg07,
-    clientImg: ClientImg07,
     name: "Fernanda Lima",
     company: "Paciente",
     content:
@@ -88,7 +73,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg08,
-    clientImg: ClientImg08,
     name: "Marcelo Rocha",
     company: "Paciente",
     content:
@@ -97,7 +81,6 @@ const testimonials = [
   },
   {
     img: TestimonialImg09,
-    clientImg: ClientImg09,
     name: "Beatriz Ferreira",
     company: "Paciente",
     content:
@@ -230,6 +213,7 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+      <ScrollIndicator text="Agendar Consulta" />
     </section>
   );
 }
@@ -237,7 +221,6 @@ export default function Testimonials() {
 interface TestimonialProps {
   testimonial: {
     img: StaticImageData;
-    clientImg: StaticImageData;
     name: string;
     company: string;
     content: string;
@@ -247,29 +230,39 @@ interface TestimonialProps {
 }
 
 export function Testimonial({ testimonial, children }: TestimonialProps) {
+  // Extrai a primeira frase para dar destaque
+  const content = String(children);
+  const firstSentenceEnd = content.indexOf('.') + 1;
+  const firstSentence = firstSentenceEnd > 0 ? content.slice(0, firstSentenceEnd) : content;
+  const restContent = firstSentenceEnd > 0 ? content.slice(firstSentenceEnd) : '';
+
   return (
-    <article className="relative rounded-2xl bg-white border border-[var(--color-accent)] p-5 shadow-sm transition-all duration-300 hover:shadow-md">
+    <article className="group relative rounded-2xl bg-white border border-[var(--color-accent)] p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--color-primary)]/30">
+      {/* Estrelas de avaliação */}
+      <div className="flex gap-0.5 mb-3">
+        {[...Array(5)].map((_, i) => (
+          <svg key={i} className="w-4 h-4 fill-[var(--color-secondary)]" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+
       <div className="flex flex-col gap-4">
-        <div className="opacity-40">
-          <Image src={testimonial.clientImg} height={36} alt="Client logo" />
-        </div>
-        <p className="text-[var(--color-text-secondary)]">
-          &ldquo;{children}&rdquo;
+        <p className="text-[var(--color-text-primary)] leading-relaxed">
+          <span className="font-semibold">&ldquo;{firstSentence}</span>
+          {restContent && <span className="text-[var(--color-text-secondary)]">{restContent}&rdquo;</span>}
         </p>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pt-2 border-t border-[var(--color-accent)]">
           <Image
-            className="inline-flex shrink-0 rounded-full"
+            className="inline-flex shrink-0 rounded-full ring-2 ring-[var(--color-accent)] group-hover:ring-[var(--color-primary)]/30 transition-all"
             src={testimonial.img}
-            width={36}
-            height={36}
+            width={40}
+            height={40}
             alt={testimonial.name}
           />
           <div className="text-sm font-medium text-[var(--color-text-primary)]">
-            <span>{testimonial.name}</span>
-            <span className="text-[var(--color-text-muted)]"> - </span>
-            <span className="text-[var(--color-text-secondary)]">
-              {testimonial.company}
-            </span>
+            <div className="font-semibold">{testimonial.name}</div>
+            <div className="text-xs text-[var(--color-text-muted)]">{testimonial.company}</div>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ export default function Atendimento() {
                     <div className="pb-12 md:pb-20">
                         <div className="grid gap-6 md:grid-cols-3">
                             {/* Local 1 - Oto Grupo Ipanema */}
-                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-md border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-colors duration-300">
+                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 <div className="mb-4 flex-grow">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                                         <svg
@@ -63,7 +63,7 @@ export default function Atendimento() {
                                     <h3 className="mb-2 font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
                                         Oto Grupo - Ipanema
                                     </h3>
-                                    <p className="mb-2 text-sm text-[var(--color-text-secondary)]">
+                                    <p className="mb-2 text-sm font-medium text-[var(--color-text-secondary)]">
                                         Fórum de Ipanema
                                     </p>
                                     <p className="mb-4 text-sm text-[var(--color-text-secondary)]">
@@ -73,12 +73,29 @@ export default function Atendimento() {
                                         <br />
                                         CEP: 22410-003
                                     </p>
+
+                                    {/* Ícones informativos */}
+                                    <div className="space-y-2 mb-4 pb-4 border-b border-[var(--color-accent)]">
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Horário sob agendamento</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span>Estacionamento no local</span>
+                                        </div>
+                                    </div>
+
                                     <p className="mb-4 text-xs text-[var(--color-text-muted)]">
                                         <a
                                             href="https://otogrupo.com.br"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="hover:text-[var(--color-primary)] transition-colors"
+                                            className="hover:text-[var(--color-primary)] transition-colors underline"
                                         >
                                             otogrupo.com.br
                                         </a>
@@ -88,14 +105,14 @@ export default function Atendimento() {
                                     href="https://wa.me/+5521987449385?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary w-full"
+                                    className="btn btn-primary w-full hover:scale-105 transition-transform"
                                 >
                                     Agendar Consulta
                                 </a>
                             </div>
 
                             {/* Local 2 - Oto Grupo Madureira */}
-                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-md border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-colors duration-300">
+                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 <div className="mb-4 flex-grow">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                                         <svg
@@ -109,7 +126,7 @@ export default function Atendimento() {
                                     <h3 className="mb-2 font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
                                         Oto Grupo - Madureira
                                     </h3>
-                                    <p className="mb-2 text-sm text-[var(--color-text-secondary)]">
+                                    <p className="mb-2 text-sm font-medium text-[var(--color-text-secondary)]">
                                         Ao lado do Shopping Madureira
                                     </p>
                                     <p className="mb-4 text-sm text-[var(--color-text-secondary)]">
@@ -119,12 +136,29 @@ export default function Atendimento() {
                                         <br />
                                         CEP: 21351-080
                                     </p>
+
+                                    {/* Ícones informativos */}
+                                    <div className="space-y-2 mb-4 pb-4 border-b border-[var(--color-accent)]">
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Horário sob agendamento</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                            </svg>
+                                            <span>Fácil acesso de transporte público</span>
+                                        </div>
+                                    </div>
+
                                     <p className="mb-4 text-xs text-[var(--color-text-muted)]">
                                         <a
                                             href="https://otogrupo.com.br"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="hover:text-[var(--color-primary)] transition-colors"
+                                            className="hover:text-[var(--color-primary)] transition-colors underline"
                                         >
                                             otogrupo.com.br
                                         </a>
@@ -134,14 +168,14 @@ export default function Atendimento() {
                                     href="https://wa.me/+5521997180604?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary w-full"
+                                    className="btn btn-primary w-full hover:scale-105 transition-transform"
                                 >
                                     Agendar Consulta
                                 </a>
                             </div>
 
-                            {/* Local 3 - Consultório Particular Botafogo */}
-                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-md border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-colors duration-300">
+                            {/* Local 3 - Consultório Particular Leblon */}
+                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 <div className="mb-4 flex-grow">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
                                         <svg
@@ -155,7 +189,7 @@ export default function Atendimento() {
                                     <h3 className="mb-2 font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
                                         Leblon Empresarial
                                     </h3>
-                                    <p className="mb-2 text-sm text-[var(--color-text-secondary)]">
+                                    <p className="mb-2 text-sm font-medium text-[var(--color-text-secondary)]">
                                         Consultório Particular
                                     </p>
                                     <p className="mb-4 text-sm text-[var(--color-text-secondary)]">
@@ -163,12 +197,28 @@ export default function Atendimento() {
                                         <br />
                                         Leblon, Rio de Janeiro - RJ
                                     </p>
+
+                                    {/* Ícones informativos */}
+                                    <div className="space-y-2 mb-4 pb-4 border-b border-[var(--color-accent)]">
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Horário sob agendamento</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                            <span>Atendimento particular</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <a
                                     href="https://wa.me/+5521997734282?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary w-full"
+                                    className="btn btn-primary w-full hover:scale-105 transition-transform"
                                 >
                                     Agendar Consulta
                                 </a>
@@ -382,10 +432,20 @@ export default function Atendimento() {
 
                         {/* Contact Note */}
                         <div className="mt-10 text-center">
-                            <div className="inline-flex rounded-xl bg-[var(--color-background-secondary)]/50 px-6 py-4">
-                                <p className="text-sm text-[var(--color-text-secondary)]">
-                                    <strong className="text-[var(--color-text-primary)]">Seu plano não está na lista?</strong> Entre em contato para verificar a aceitação.
+                            <div className="inline-flex flex-col items-center rounded-xl bg-[var(--color-background-secondary)]/70 px-8 py-5 border border-[var(--color-accent)] shadow-sm">
+                                <p className="text-sm text-[var(--color-text-primary)] mb-3">
+                                    <strong className="font-semibold">Seu plano não está na lista?</strong>
+                                    <br />
+                                    Entre em contato para consultar disponibilidade
                                 </p>
+                                <a
+                                    href="https://wa.me/+5521987449385?text=Olá%2C%20gostaria%20de%20saber%20se%20aceitam%20meu%20convênio."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] transition-colors underline"
+                                >
+                                    Consultar Disponibilidade
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProfileImage from "@/public/images/profile.png";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 export default function AboutDoctor() {
     return (
@@ -12,17 +13,24 @@ export default function AboutDoctor() {
                         <div className="md:col-span-3">
                             <div className="mb-8">
                                 <div className="inline-flex items-center gap-3 pb-3 before:h-px before:w-8 before:bg-linear-to-r before:from-transparent before:to-[var(--color-secondary)] after:h-px after:w-8 after:bg-linear-to-l after:from-transparent after:to-[var(--color-secondary)]">
-                                    <span className="inline-flex bg-linear-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-transparent">
+                                    <span className="inline-flex bg-linear-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-transparent font-semibold">
                                         Conheça
                                     </span>
                                 </div>
                                 <h2 className="bg-[linear-gradient(to_right,var(--color-primary),var(--color-secondary),var(--color-primary))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
                                     Sobre a Dra. Jasmin Dezotti
                                 </h2>
+                                {/* Selo de Fellowship */}
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30">
+                                    <svg className="w-4 h-4 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <span className="text-xs font-semibold text-[var(--color-primary)]">Fellowship em Rinologia - HUPE/UERJ</span>
+                                </div>
                             </div>
 
-                            <div className="space-y-4 text-[var(--color-text-secondary)]">
-                                <p className="text-lg">
+                            <div className="space-y-4 text-[var(--color-text-primary)]">
+                                <p className="text-lg leading-relaxed">
                                     Médica otorrinolaringologista com formação sólida e dedicação ao cuidado
                                     humanizado de cada paciente. Acredito que a medicina vai além do diagnóstico
                                     técnico – é sobre ouvir, compreender e oferecer soluções personalizadas.
@@ -139,9 +147,9 @@ export default function AboutDoctor() {
 
                                 {/* Quick Stats */}
                                 <div className="space-y-3">
-                                    <div className="rounded-xl bg-white p-4 shadow-sm border border-[var(--color-accent)]">
+                                    <div className="rounded-xl bg-white p-4 shadow-md border border-[var(--color-accent)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                                         <div className="flex items-center gap-3">
-                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/20">
+                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/30">
                                                 <svg
                                                     className="h-5 w-5 fill-[var(--color-primary)]"
                                                     viewBox="0 0 20 20"
@@ -151,15 +159,15 @@ export default function AboutDoctor() {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium text-[var(--color-text-primary)]">Atendimento Humanizado</p>
+                                                <p className="text-sm font-semibold text-[var(--color-text-primary)]">Atendimento Humanizado</p>
                                                 <p className="text-xs text-[var(--color-text-secondary)]">Tempo dedicado a cada paciente</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="rounded-xl bg-white p-4 shadow-sm border border-[var(--color-accent)]">
+                                    <div className="rounded-xl bg-white p-4 shadow-md border border-[var(--color-accent)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                                         <div className="flex items-center gap-3">
-                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/20">
+                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/30">
                                                 <svg
                                                     className="h-5 w-5 fill-[var(--color-primary)]"
                                                     viewBox="0 0 20 20"
@@ -170,15 +178,15 @@ export default function AboutDoctor() {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium text-[var(--color-text-primary)]">Especialização Avançada</p>
+                                                <p className="text-sm font-semibold text-[var(--color-text-primary)]">Especialização Avançada</p>
                                                 <p className="text-xs text-[var(--color-text-secondary)]">Fellowship em Rinologia</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="rounded-xl bg-white p-4 shadow-sm border border-[var(--color-accent)]">
+                                    <div className="rounded-xl bg-white p-4 shadow-md border border-[var(--color-accent)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                                         <div className="flex items-center gap-3">
-                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/20">
+                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-secondary)]/30">
                                                 <svg
                                                     className="h-5 w-5 fill-[var(--color-primary)]"
                                                     viewBox="0 0 20 20"
@@ -188,7 +196,7 @@ export default function AboutDoctor() {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-medium text-[var(--color-text-primary)]">Formação de Excelência</p>
+                                                <p className="text-sm font-semibold text-[var(--color-text-primary)]">Formação de Excelência</p>
                                                 <p className="text-xs text-[var(--color-text-secondary)]">UERJ - Hospital Pedro Ernesto</p>
                                             </div>
                                         </div>
@@ -199,6 +207,7 @@ export default function AboutDoctor() {
                     </div>
                 </div>
             </div>
+            <ScrollIndicator text="Tratamentos Especializados" />
         </section>
     );
 }

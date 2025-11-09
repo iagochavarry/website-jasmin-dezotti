@@ -3,6 +3,7 @@ import WorflowImg01 from "@/public/images/workflow-01.png";
 import WorflowImg02 from "@/public/images/workflow-02.png";
 import WorflowImg03 from "@/public/images/workflow-03.png";
 import Spotlight from "@/components/spotlight";
+import ScrollIndicator from "@/components/scroll-indicator";
 
 export default function Workflows() {
   return (
@@ -52,26 +53,32 @@ export default function Workflows() {
                 {/* Image */}
                 <div className="h-[288px] w-full overflow-hidden">
                   <Image
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover object-center group-hover/card:scale-110 transition-transform duration-500"
                     src={WorflowImg01}
                     width={350}
                     height={288}
-                    alt="Workflow 01"
+                    alt="Rinologia - Tratamento nasal especializado"
                   />
                 </div>
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
-                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/30 px-2.5 py-0.5 text-xs font-normal border border-[var(--color-secondary)]/60">
-                      <span className="text-[var(--color-secondary)] font-semibold">
+                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/40 px-3 py-1 text-xs font-normal border-2 border-[var(--color-secondary)]/70">
+                      <span className="text-[var(--color-secondary)] font-bold">
                         Rinologia
                       </span>
                     </span>
                   </div>
-                  <p className="text-gray-300 font-inter text-sm leading-relaxed">
+                  <p className="text-gray-300 font-inter text-sm leading-relaxed mb-3">
                     Tratamento especializado de doenças nasais e sinusais, incluindo
                     rinite, sinusite e desvio de septo. Fellowship em HUPE/UERJ.
                   </p>
+                  <div className="flex items-center gap-1 text-[var(--color-secondary)] text-sm font-medium group-hover/card:gap-2 transition-all">
+                    <span>Saiba mais</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </a>
@@ -101,26 +108,32 @@ export default function Workflows() {
                 {/* Image */}
                 <div className="h-[288px] w-full overflow-hidden">
                   <Image
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover object-center group-hover/card:scale-110 transition-transform duration-500"
                     src={WorflowImg02}
                     width={350}
                     height={288}
-                    alt="Workflow 02"
+                    alt="Otologia - Saúde auditiva"
                   />
                 </div>
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
-                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/30 px-2.5 py-0.5 text-xs font-normal border border-[var(--color-secondary)]/60">
-                      <span className="text-[var(--color-secondary)] font-semibold">
+                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/40 px-3 py-1 text-xs font-normal border-2 border-[var(--color-secondary)]/70">
+                      <span className="text-[var(--color-secondary)] font-bold">
                         Otologia
                       </span>
                     </span>
                   </div>
-                  <p className="text-gray-300 font-inter text-sm leading-relaxed">
+                  <p className="text-gray-300 font-inter text-sm leading-relaxed mb-3">
                     Diagnóstico e tratamento de problemas auriculares, como otite,
                     perda auditiva, zumbido e tontura. Cuidado integral da saúde auditiva.
                   </p>
+                  <div className="flex items-center gap-1 text-[var(--color-secondary)] text-sm font-medium group-hover/card:gap-2 transition-all">
+                    <span>Saiba mais</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </a>
@@ -150,32 +163,39 @@ export default function Workflows() {
                 {/* Image */}
                 <div className="h-[288px] w-full overflow-hidden">
                   <Image
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover object-center group-hover/card:scale-110 transition-transform duration-500"
                     src={WorflowImg03}
                     width={350}
                     height={288}
-                    alt="Workflow 03"
+                    alt="Laringologia - Saúde vocal"
                   />
                 </div>
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-3">
-                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/30 px-2.5 py-0.5 text-xs font-normal border border-[var(--color-secondary)]/60">
-                      <span className="text-[var(--color-secondary)] font-semibold">
+                    <span className="btn-sm relative rounded-full bg-[var(--color-secondary)]/40 px-3 py-1 text-xs font-normal border-2 border-[var(--color-secondary)]/70">
+                      <span className="text-[var(--color-secondary)] font-bold">
                         Laringologia
                       </span>
                     </span>
                   </div>
-                  <p className="text-gray-300 font-inter text-sm leading-relaxed">
+                  <p className="text-gray-300 font-inter text-sm leading-relaxed mb-3">
                     Tratamento de alterações na voz, doenças da garganta e laringe.
                     Acompanhamento de problemas vocais e respiratórios da via aérea superior.
                   </p>
+                  <div className="flex items-center gap-1 text-[var(--color-secondary)] text-sm font-medium group-hover/card:gap-2 transition-all">
+                    <span>Saiba mais</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </a>
           </Spotlight>
         </div>
       </div>
+      <ScrollIndicator text="Diferenciais do Atendimento" />
     </section>
   );
 }
