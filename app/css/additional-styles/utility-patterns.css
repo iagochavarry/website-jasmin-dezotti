@@ -1,0 +1,132 @@
+/* Buttons */
+.btn,
+.btn-sm {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-300;
+}
+
+.btn {
+    @apply px-4 py-[11px];
+}
+
+.btn-sm {
+    @apply px-3 py-[7px];
+}
+
+.btn-primary {
+    @apply bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] shadow-sm;
+}
+
+.btn-secondary {
+    @apply bg-[var(--color-secondary)] text-white hover:bg-[var(--color-secondary-light)] shadow-sm;
+}
+
+.btn-outline {
+    @apply border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white;
+}
+
+/* Forms */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+    @apply border border-[var(--color-accent)] bg-white focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:ring-offset-0 transition-all duration-300;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+    @apply rounded-lg px-4 py-2.5 text-sm text-[var(--color-text-primary)];
+}
+
+.form-input,
+.form-textarea {
+    @apply placeholder-[var(--color-text-muted)];
+}
+
+.form-select {
+    @apply pr-10;
+}
+
+.form-checkbox,
+.form-radio {
+    @apply text-[var(--color-primary)];
+}
+
+.form-checkbox {
+    @apply rounded-xs;
+}
+
+/* Scrollbar Hide */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Blog Prose Styles */
+.prose {
+    color: var(--color-text-primary);
+}
+
+.prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.75;
+}
+
+.prose h2 {
+    font-family: var(--font-nacelle);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.prose h3 {
+    font-family: var(--font-nacelle);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+}
+
+.prose ul {
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
+
+.prose li {
+    margin-bottom: 0.5em;
+    color: var(--color-text-secondary);
+}
+
+.prose strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.prose a:hover {
+    color: var(--color-secondary);
+}
