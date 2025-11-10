@@ -4,7 +4,8 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Image from "next/image";
 
-import ConditionalHeader from "@/components/ui/conditional-header";
+import Header from "@/components/ui/header";
+import GoogleAnalytics from "@/components/analytics/google-analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${nacelle.variable} bg-[var(--color-background-primary)] font-inter text-base text-[var(--color-text-primary)] antialiased relative`}
       >
+        <GoogleAnalytics />
         {/* Background Mesh */}
         <div className="fixed inset-0 -z-10 opacity-40">
           <Image
@@ -79,7 +81,7 @@ export default function RootLayout({
         </div>
 
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip relative">
-          <ConditionalHeader />
+          <Header />
           {children}
         </div>
       </body>
