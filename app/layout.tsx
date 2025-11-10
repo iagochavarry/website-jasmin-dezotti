@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Image from "next/image";
 
-import Header from "@/components/ui/header";
+import ConditionalHeader from "@/components/ui/conditional-header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,7 +67,7 @@ export default function RootLayout({
         </div>
 
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip relative">
-          <Header />
+          <ConditionalHeader />
           {children}
         </div>
       </body>
