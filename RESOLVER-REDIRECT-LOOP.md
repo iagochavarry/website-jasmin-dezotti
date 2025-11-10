@@ -46,8 +46,10 @@ pnpm start
 1. Acesse o dashboard do Vercel
 2. Vá em Settings → Domains
 3. Verifique se há redirecionamentos configurados
-4. **IMPORTANTE:** Remova qualquer redirecionamento automático de HTTP→HTTPS ou www→non-www
-5. O Vercel já faz isso automaticamente!
+4. **CRÍTICO:** Verifique se há uma regra redirecionando `jasmindezotti.com` → `www.jasmindezotti.com`
+5. **REMOVA essa regra se existir!**
+6. O Next.js agora está configurado para redirecionar www → non-www
+7. **Deixe APENAS o Next.js fazer esse redirect, não o Vercel!**
 
 #### **Se estiver usando Netlify:**
 
@@ -77,13 +79,18 @@ pnpm start
 # rewrite ^ https://$host$request_uri? permanent;
 ```
 
-### 4. Verificar Cloudflare (se estiver usando)
+### 4. Verificar Cloudflare (se estiver usando) ⚠️ CRÍTICO
 
 1. Acesse o dashboard do Cloudflare
 2. Vá em SSL/TLS → Overview
 3. Configure para **"Full"** ou **"Full (strict)"**
 4. **NÃO use "Flexible"** - isso causa loops!
-5. Em Page Rules, remova qualquer regra de redirecionamento
+5. **CRÍTICO:** Vá em Rules → Page Rules ou Transform Rules
+6. **REMOVA ou DESATIVE qualquer regra que redirecione:**
+   - `jasmindezotti.com` → `www.jasmindezotti.com`
+   - `http://` → `https://` (se já estiver usando HTTPS)
+7. O Next.js agora está configurado para redirecionar www → non-www
+8. **Deixe APENAS o Next.js fazer esse redirect, não o Cloudflare!**
 
 ### 5. Fazer Deploy Limpo
 
@@ -98,20 +105,33 @@ git push
 
 ## 🎯 Causa Raiz do Problema
 
-O loop acontece quando há **múltiplas camadas** tentando fazer o mesmo redirecionamento:
+**PROBLEMA IDENTIFICADO:** Loop entre www e non-www!
 
-- ❌ Servidor (Apache/Nginx) redireciona HTTP → HTTPS
-- ❌ Cloudflare redireciona HTTP → HTTPS
-- ❌ Next.js tenta redirecionar HTTP → HTTPS
+O curl mostra claramente:
+
+- `jasmindezotti.com` → redireciona para `www.jasmindezotti.com` (HTTP 307)
+- `www.jasmindezotti.com` → redireciona para `jasmindezotti.com` (HTTP 308)
+- **Resultado: Loop infinito!**
+
+O loop acontece quando há **múltiplas camadas** tentando fazer redirecionamentos **opostos**:
+
+- ❌ Cloudflare/Vercel redireciona non-www → www
+- ❌ Outra configuração redireciona www → non-www
 - ❌ Resultado: Loop infinito!
 
-**Solução:** Deixe apenas UMA camada fazer o redirecionamento (preferencialmente o servidor/CDN).
+**Solução:** Configure apenas UMA direção de redirecionamento:
+
+- Escolha: usar `jasmindezotti.com` (sem www) OU `www.jasmindezotti.com` (com www)
+- Configure TODOS os serviços para redirecionar na mesma direção
+- O Next.js agora está configurado para redirecionar www → non-www
+- **IMPORTANTE:** Remova qualquer regra que redirecione non-www → www no Cloudflare/Vercel
 
 ## 📋 Checklist de Verificação
 
 - [ ] Limpei o cache do navegador
 - [ ] Testei em modo anônimo/privado
-- [ ] Removi redirecionamentos do next.config.js ✅ (já feito)
+- [x] Configurei redirect www → non-www no next.config.js ✅ (já feito)
+- [ ] **Removi regra non-www → www no Cloudflare/Vercel** ⚠️ CRÍTICO
 - [ ] Verifiquei configurações do Vercel/Netlify
 - [ ] Verifiquei configurações do Cloudflare (se aplicável)
 - [ ] Fiz rebuild e redeploy limpo

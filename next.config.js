@@ -21,6 +21,21 @@ const nextConfig = {
             },
         ];
     },
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'www.jasmindezotti.com',
+                    },
+                ],
+                destination: 'https://jasmindezotti.com/:path*',
+                permanent: true,
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
