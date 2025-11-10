@@ -71,7 +71,7 @@ export default function Workflows() {
                   </div>
                   <p className="text-gray-300 font-inter text-sm leading-relaxed mb-3">
                     Tratamento especializado de doenças nasais e sinusais, incluindo
-                    rinite, sinusite e desvio de septo. Fellowship em HUPE/UERJ.
+                    rinite, sinusite e desvio de septo. Fellowship em HUPE/UERJ (2026).
                   </p>
                   <div className="flex items-center gap-1 text-[var(--color-secondary)] text-sm font-medium group-hover/card:gap-2 transition-all">
                     <span>Saiba mais</span>

@@ -13,8 +13,20 @@ import RiosDorImage from "@/public/images/riosdor.jpg";
 import CopaStarImage from "@/public/images/star.png";
 
 export const metadata = {
-    title: "Agendar Consulta - Dra. Jasmin Dezotti | Otorrinolaringologista",
-    description: "Agende sua consulta com a Dra. Jasmin Dezotti. Atendimento especializado em otorrinolaringologia com foco em rinologia, otologia e laringologia.",
+    title: "Agendar Consulta - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
+    description: "Agende sua consulta com a Dra. Jasmin Dezotti. Atendimento especializado em otorrinolaringologia em Madureira e Zona Sul, Rio de Janeiro. Agende pelo WhatsApp.",
+    robots: "index, follow",
+    alternates: {
+        canonical: "https://jasmindezotti.com/atendimento/"
+    },
+    openGraph: {
+        title: "Agendar Consulta - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
+        description: "Agende sua consulta com a Dra. Jasmin Dezotti. Atendimento especializado em otorrinolaringologia em Madureira e Zona Sul, Rio de Janeiro.",
+        url: "https://jasmindezotti.com/atendimento/",
+        siteName: "Dra. Jasmin Dezotti Lovisi",
+        locale: "pt_BR",
+        type: "website",
+    },
 };
 
 export default function Atendimento() {
@@ -35,7 +47,7 @@ export default function Atendimento() {
                                     Locais de Atendimento
                                 </h1>
                                 <p className="text-lg text-[var(--color-text-secondary)]">
-                                    Escolha o local mais conveniente para sua consulta. Atendimento humanizado em todos os endereços.
+                                    Escolha o local mais conveniente para sua consulta. Atendimento de excelência em todos os endereços.
                                 </p>
                             </div>
                         </div>
@@ -47,71 +59,8 @@ export default function Atendimento() {
             <section>
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
                     <div className="pb-12 md:pb-20">
-                        <div className="grid gap-6 md:grid-cols-3">
-                            {/* Local 1 - Oto Grupo Ipanema */}
-                            <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                                <div className="mb-4 flex-grow">
-                                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
-                                        <svg
-                                            className="h-6 w-6 fill-[var(--color-primary)]"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="mb-2 font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
-                                        Oto Grupo - Ipanema
-                                    </h3>
-                                    <p className="mb-2 text-sm font-medium text-[var(--color-text-secondary)]">
-                                        Fórum de Ipanema
-                                    </p>
-                                    <p className="mb-4 text-sm text-[var(--color-text-secondary)]">
-                                        R. Visc. de Pirajá, 351 - 1124
-                                        <br />
-                                        Ipanema, Rio de Janeiro - RJ
-                                        <br />
-                                        CEP: 22410-003
-                                    </p>
-
-                                    {/* Ícones informativos */}
-                                    <div className="space-y-2 mb-4 pb-4 border-b border-[var(--color-accent)]">
-                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span>Horário sob agendamento</span>
-                                        </div>
-                                        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                                            <svg className="w-4 h-4 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                            </svg>
-                                            <span>Estacionamento no local</span>
-                                        </div>
-                                    </div>
-
-                                    <p className="mb-4 text-xs text-[var(--color-text-muted)]">
-                                        <a
-                                            href="https://otogrupo.com.br"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:text-[var(--color-primary)] transition-colors underline"
-                                        >
-                                            otogrupo.com.br
-                                        </a>
-                                    </p>
-                                </div>
-                                <a
-                                    href="https://wa.me/+5521987449385?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-primary w-full hover:scale-105 transition-transform"
-                                >
-                                    Agendar Consulta
-                                </a>
-                            </div>
-
-                            {/* Local 2 - Oto Grupo Madureira */}
+                        <div className="grid gap-6 md:grid-cols-2">
+                            {/* Local 1 - Oto Grupo Madureira */}
                             <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 <div className="mb-4 flex-grow">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
@@ -174,7 +123,7 @@ export default function Atendimento() {
                                 </a>
                             </div>
 
-                            {/* Local 3 - Consultório Particular Leblon */}
+                            {/* Local 2 - Consultório Particular */}
                             <div className="flex flex-col rounded-2xl bg-white p-6 shadow-lg border-2 border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 <div className="mb-4 flex-grow">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
@@ -187,15 +136,15 @@ export default function Atendimento() {
                                         </svg>
                                     </div>
                                     <h3 className="mb-2 font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
-                                        Leblon Empresarial
+                                        Consultório Particular
                                     </h3>
                                     <p className="mb-2 text-sm font-medium text-[var(--color-text-secondary)]">
-                                        Consultório Particular
+                                        Zona Sul
                                     </p>
                                     <p className="mb-4 text-sm text-[var(--color-text-secondary)]">
-                                        Av. Ataulfo de Paiva, 204
+                                        Local: Zona Sul, Rio de Janeiro - RJ
                                         <br />
-                                        Leblon, Rio de Janeiro - RJ
+                                        <span className="text-xs text-[var(--color-text-muted)]">Endereço informado no agendamento</span>
                                     </p>
 
                                     {/* Ícones informativos */}
@@ -246,9 +195,9 @@ export default function Atendimento() {
                             </p>
                         </div>
 
-                        <div className="grid gap-6 md:grid-cols-3">
-                            {/* Hospital 1 - HUPE/UERJ */}
-                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300">
+                        <div className="flex justify-center">
+                            {/* Hospital - HUPE/UERJ */}
+                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300 max-w-sm">
                                 <div className="h-32 w-full overflow-hidden">
                                     <Image
                                         src={HupeImage}
@@ -266,52 +215,6 @@ export default function Atendimento() {
                                         Hospital Universitário
                                         <br />
                                         Pedro Ernesto
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Hospital 2 - Rio's D'Or */}
-                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300">
-                                <div className="h-32 w-full overflow-hidden">
-                                    <Image
-                                        src={RiosDorImage}
-                                        alt="Hospital Rio's D'Or"
-                                        width={400}
-                                        height={128}
-                                        className="h-full w-full object-cover"
-                                    />
-                                </div>
-                                <div className="p-6 text-center">
-                                    <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                                        Hospital Rio&apos;s D&apos;Or
-                                    </h3>
-                                    <p className="text-sm text-[var(--color-text-secondary)] mt-2">
-                                        Rede D&apos;Or
-                                        <br />
-                                        São Cristóvão
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Hospital 3 - Copa Star */}
-                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300">
-                                <div className="h-32 w-full overflow-hidden">
-                                    <Image
-                                        src={CopaStarImage}
-                                        alt="Hospital Copa Star"
-                                        width={400}
-                                        height={128}
-                                        className="h-full w-full object-cover"
-                                    />
-                                </div>
-                                <div className="p-6 text-center">
-                                    <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                                        Hospital Copa Star
-                                    </h3>
-                                    <p className="text-sm text-[var(--color-text-secondary)] mt-2">
-                                        Rede D&apos;Or
-                                        <br />
-                                        Copacabana
                                     </p>
                                 </div>
                             </div>

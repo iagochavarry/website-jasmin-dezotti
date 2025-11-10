@@ -2,8 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Blog - Dra. Jasmin Dezotti | Otorrinolaringologista",
-    description: "Artigos, dicas e informações sobre saúde respiratória, otorrinolaringologia e bem-estar. Conteúdo educativo da Dra. Jasmin Dezotti.",
+    title: "Blog - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
+    description: "Artigos, dicas e informações sobre saúde respiratória, otorrinolaringologia e bem-estar. Conteúdo educativo da Dra. Jasmin Dezotti sobre rinologia, otologia e laringologia.",
+    robots: "index, follow",
+    alternates: {
+        canonical: "https://jasmindezotti.com/blog/"
+    },
+    openGraph: {
+        title: "Blog - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
+        description: "Artigos, dicas e informações sobre saúde respiratória, otorrinolaringologia e bem-estar. Conteúdo educativo da Dra. Jasmin Dezotti.",
+        url: "https://jasmindezotti.com/blog/",
+        siteName: "Dra. Jasmin Dezotti Lovisi",
+        locale: "pt_BR",
+        type: "website",
+    },
 };
 
 // Mock data - substituir futuramente por CMS ou banco de dados

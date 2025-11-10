@@ -61,7 +61,7 @@ export default function Features() {
                 Especialização em Rinologia
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Fellowship em Rinologia pelo HUPE/UERJ,
+                Fellowship em Rinologia pelo HUPE/UERJ (2026),
                 referência nacional em cirurgias nasais e tratamento de sinusites.
               </p>
             </article>
@@ -81,7 +81,7 @@ export default function Features() {
                 </svg>
               </div>
               <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                Atendimento Humanizado
+                Atendimento de Qualidade
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
                 Consultas com tempo dedicado para ouvir, entender e esclarecer todas

@@ -57,7 +57,7 @@ export default function HeroHome() {
                   data-aos="fade-up"
                   data-aos-delay={200}
                 >
-                  Cuidado humanizado e especializado para sua saúde respiratória.
+                  Cuidado de excelência e especializado para sua saúde respiratória.
                   Atendimento dedicado com foco em diagnóstico preciso e tratamentos personalizados.
                 </p>
                 <div className="mx-auto max-w-xs sm:max-w-none md:mx-0">

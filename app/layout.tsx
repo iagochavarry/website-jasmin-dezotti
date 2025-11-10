@@ -40,8 +40,20 @@ const nacelle = localFont({
 });
 
 export const metadata = {
-  title: "Dra. Jasmin Dezotti - Otorrinolaringologista",
-  description: "Otorrinolaringologista especializada em rinologia, otologia e laringologia. Atendimento humanizado e tratamentos personalizados no Rio de Janeiro.",
+  title: "Dra. Jasmin Dezotti Lovisi - Otorrinolaringologista",
+  description: "Otorrinolaringologista especializada em rinologia, otologia e laringologia. Atendimento de excelência e tratamentos personalizados no Rio de Janeiro.",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://jasmindezotti.com/"
+  },
+  openGraph: {
+    title: "Dra. Jasmin Dezotti Lovisi - Otorrinolaringologista",
+    description: "Otorrinolaringologista especializada em rinologia, otologia e laringologia. Atendimento de excelência e tratamentos personalizados no Rio de Janeiro.",
+    url: "https://jasmindezotti.com/",
+    siteName: "Dra. Jasmin Dezotti Lovisi",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

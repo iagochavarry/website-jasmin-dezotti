@@ -25,14 +25,14 @@ export default function AboutDoctor() {
                                     <svg className="w-4 h-4 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
-                                    <span className="text-xs font-semibold text-[var(--color-primary)]">Fellowship em Rinologia - HUPE/UERJ</span>
+                                    <span className="text-xs font-semibold text-[var(--color-primary)]">Fellowship em Rinologia - HUPE/UERJ (2026)</span>
                                 </div>
                             </div>
 
                             <div className="space-y-4 text-[var(--color-text-primary)]">
                                 <p className="text-lg leading-relaxed">
                                     Médica otorrinolaringologista com formação sólida e dedicação ao cuidado
-                                    humanizado de cada paciente. Acredito que a medicina vai além do diagnóstico
+                                    de excelência de cada paciente. Acredito que a medicina vai além do diagnóstico
                                     técnico – é sobre ouvir, compreender e oferecer soluções personalizadas.
                                 </p>
 
@@ -75,7 +75,7 @@ export default function AboutDoctor() {
                                                     <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                                                 </svg>
                                                 <span>
-                                                    <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ
+                                                    <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ (2026)
                                                 </span>
                                             </li>
                                         </ul>
@@ -159,7 +159,7 @@ export default function AboutDoctor() {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-[var(--color-text-primary)]">Atendimento Humanizado</p>
+                                                <p className="text-sm font-semibold text-[var(--color-text-primary)]">Atendimento de Excelência</p>
                                                 <p className="text-xs text-[var(--color-text-secondary)]">Tempo dedicado a cada paciente</p>
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@ export default function AboutDoctor() {
                                             </div>
                                             <div>
                                                 <p className="text-sm font-semibold text-[var(--color-text-primary)]">Especialização Avançada</p>
-                                                <p className="text-xs text-[var(--color-text-secondary)]">Fellowship em Rinologia</p>
+                                                <p className="text-xs text-[var(--color-text-secondary)]">Fellowship em Rinologia (2026)</p>
                                             </div>
                                         </div>
                                     </div>

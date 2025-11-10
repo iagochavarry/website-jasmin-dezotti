@@ -36,7 +36,7 @@ const testimonials = [
     name: "Ana Paula Costa",
     company: "Paciente",
     content:
-      "O atendimento foi humanizado e acolhedor desde o primeiro contato. Meu filho tinha problemas recorrentes de otite e graças ao tratamento correto da Dra. Jasmin, ele está curado. Recomendo de olhos fechados!",
+      "O atendimento foi de excelência e acolhedor desde o primeiro contato. Meu filho tinha problemas recorrentes de otite e graças ao tratamento correto da Dra. Jasmin, ele está curado. Recomendo de olhos fechados!",
     categories: [1, 3], // Otologia (otite)
   },
   {
