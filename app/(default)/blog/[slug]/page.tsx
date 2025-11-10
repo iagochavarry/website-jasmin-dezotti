@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 // Mock data - substituir por busca em CMS/banco de dados
 const blogPostsData: Record<string, any> = {
@@ -11,39 +12,71 @@ const blogPostsData: Record<string, any> = {
         author: "Dra. Jasmin Dezotti",
         image: "/images/workflow-01.png",
         content: `
-      <p>A rinite alérgica é uma condição muito comum que afeta milhões de pessoas no Brasil. Caracterizada por espirros frequentes, coriza, coceira no nariz e congestão nasal, pode impactar significativamente a qualidade de vida.</p>
+      <p>A <strong>rinite alérgica</strong> é uma condição muito comum que afeta milhões de pessoas no Brasil. Caracterizada por espirros frequentes, coriza, coceira no nariz e congestão nasal, pode impactar significativamente a qualidade de vida. Como <strong>otorrinolaringologista especializada em rinologia</strong>, vou compartilhar informações essenciais sobre esta condição.</p>
 
       <h2>O que causa a rinite alérgica?</h2>
-      <p>A rinite alérgica ocorre quando o sistema imunológico reage exageradamente a substâncias presentes no ar, como:</p>
+      <p>A rinite alérgica ocorre quando o sistema imunológico reage exageradamente a substâncias presentes no ar (alérgenos), como:</p>
       <ul>
-        <li>Ácaros da poeira</li>
-        <li>Pólen de plantas</li>
-        <li>Pelos de animais</li>
-        <li>Fungos e mofo</li>
+        <li><strong>Ácaros da poeira</strong> - principais causadores em ambientes internos</li>
+        <li><strong>Pólen de plantas</strong> - mais comum na primavera e outono</li>
+        <li><strong>Pelos de animais</strong> - cães, gatos e outros pets</li>
+        <li><strong>Fungos e mofo</strong> - em ambientes úmidos</li>
+        <li><strong>Poluição atmosférica</strong> - especialmente em grandes cidades como Rio de Janeiro</li>
       </ul>
 
-      <h2>Principais sintomas</h2>
-      <p>Os sintomas mais comuns incluem:</p>
+      <h2>Principais sintomas da rinite alérgica</h2>
+      <p>Os sintomas mais comuns que observo em meus pacientes incluem:</p>
       <ul>
-        <li>Espirros repetidos</li>
+        <li>Espirros repetidos (especialmente pela manhã)</li>
         <li>Coriza clara e abundante</li>
         <li>Coceira no nariz, olhos e garganta</li>
-        <li>Congestão nasal</li>
-        <li>Olhos lacrimejantes</li>
+        <li>Congestão nasal (nariz entupido)</li>
+        <li>Olhos lacrimejantes e vermelhos</li>
+        <li>Fadiga e irritabilidade</li>
+        <li>Dificuldade para dormir</li>
       </ul>
 
-      <h2>Cuidados e prevenção</h2>
-      <p>Para controlar os sintomas da rinite alérgica, recomendo:</p>
+      <h2>Cuidados e prevenção - Dicas da Dra. Jasmin</h2>
+      <p>Para controlar os sintomas da rinite alérgica, recomendo as seguintes medidas preventivas:</p>
+      
+      <h3>Ambiente doméstico:</h3>
       <ul>
-        <li>Manter a casa limpa e arejada</li>
+        <li>Manter a casa limpa e bem arejada</li>
         <li>Usar capas antiácaros em travesseiros e colchões</li>
-        <li>Evitar tapetes e cortinas pesadas</li>
-        <li>Trocar a roupa de cama semanalmente</li>
+        <li>Evitar tapetes, cortinas pesadas e bichos de pelúcia</li>
+        <li>Trocar a roupa de cama semanalmente com água quente</li>
         <li>Usar ar condicionado com filtros limpos</li>
+        <li>Manter umidade do ar entre 40-60%</li>
       </ul>
 
-      <h2>Quando procurar um especialista</h2>
-      <p>É importante consultar um otorrinolaringologista se você apresenta sintomas persistentes, crises frequentes ou se a rinite está afetando seu sono e atividades diárias. O tratamento adequado pode incluir medicamentos, imunoterapia e orientações personalizadas.</p>
+      <h3>Cuidados pessoais:</h3>
+      <ul>
+        <li>Lavar o nariz com soro fisiológico diariamente</li>
+        <li>Evitar exposição a perfumes e produtos químicos fortes</li>
+        <li>Usar óculos de sol para proteger os olhos do pólen</li>
+        <li>Tomar banho antes de dormir para remover alérgenos</li>
+      </ul>
+
+      <h2>Tratamento especializado em otorrinolaringologia</h2>
+      <p>O tratamento da rinite alérgica pode incluir:</p>
+      <ul>
+        <li><strong>Medicamentos antialérgicos</strong> - anti-histamínicos e corticoides nasais</li>
+        <li><strong>Imunoterapia</strong> - vacinas para dessensibilização</li>
+        <li><strong>Lavagem nasal</strong> - técnicas específicas de higiene nasal</li>
+        <li><strong>Orientações personalizadas</strong> - adaptadas ao seu estilo de vida</li>
+      </ul>
+
+      <h2>Quando procurar um otorrinolaringologista no Rio de Janeiro</h2>
+      <p>É importante consultar um especialista se você apresenta:</p>
+      <ul>
+        <li>Sintomas persistentes por mais de 2 semanas</li>
+        <li>Crises frequentes que afetam o trabalho ou estudos</li>
+        <li>Dificuldade para dormir devido à congestão nasal</li>
+        <li>Sintomas que não melhoram com medicamentos de farmácia</li>
+        <li>Complicações como sinusite recorrente</li>
+      </ul>
+
+      <p>Como <strong>otorrinolaringologista em Madureira e Zona Sul</strong>, atendo pacientes com rinite alérgica oferecendo diagnóstico preciso e tratamento personalizado. <a href="/atendimento">Agende sua consulta</a> para uma avaliação completa.</p>
     `,
     },
     "quando-procurar-otorrino": {
@@ -102,6 +135,48 @@ interface PageProps {
     }>;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const { slug } = await params;
+    const post = blogPostsData[slug];
+
+    if (!post) {
+        return {
+            title: "Post não encontrado - Dra. Jasmin Dezotti",
+            description: "O post solicitado não foi encontrado.",
+        };
+    }
+
+    return {
+        title: `${post.title} - Dra. Jasmin Dezotti | Otorrinolaringologista`,
+        description: post.subtitle,
+        robots: "index, follow",
+        alternates: {
+            canonical: `https://jasmindezotti.com/blog/${slug}/`
+        },
+        openGraph: {
+            title: `${post.title} - Dra. Jasmin Dezotti`,
+            description: post.subtitle,
+            url: `https://jasmindezotti.com/blog/${slug}/`,
+            siteName: "Dra. Jasmin Dezotti Lovisi",
+            locale: "pt_BR",
+            type: "article",
+            publishedTime: post.date,
+            authors: [post.author],
+            section: post.category,
+        },
+        keywords: [
+            "otorrinolaringologista",
+            "Rio de Janeiro",
+            "Madureira",
+            "Zona Sul",
+            post.category.toLowerCase(),
+            "rinologia",
+            "otologia",
+            "laringologia"
+        ].join(", "),
+    };
+}
+
 export default async function BlogPost({ params }: PageProps) {
     const { slug } = await params;
     const post = blogPostsData[slug];
@@ -125,6 +200,12 @@ export default async function BlogPost({ params }: PageProps) {
             <section>
                 <div className="mx-auto max-w-4xl px-4 sm:px-6">
                     <div className="py-12 md:py-20">
+                        <Breadcrumbs
+                            items={[
+                                { label: "Blog", href: "/blog" },
+                                { label: post.title }
+                            ]}
+                        />
                         {/* Back Button */}
                         <Link
                             href="/blog"
@@ -190,6 +271,33 @@ export default async function BlogPost({ params }: PageProps) {
                                 color: "var(--color-text-primary)",
                             }}
                         />
+
+                        {/* Related Links */}
+                        <div className="mt-12 p-6 bg-[var(--color-background-secondary)]/50 rounded-2xl border border-[var(--color-accent)]">
+                            <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)] mb-4">
+                                Links Relacionados
+                            </h3>
+                            <div className="space-y-3">
+                                <Link
+                                    href="/atendimento"
+                                    className="block text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] transition-colors font-medium"
+                                >
+                                    → Agendar Consulta com a Dra. Jasmin Dezotti
+                                </Link>
+                                <Link
+                                    href="/blog"
+                                    className="block text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] transition-colors font-medium"
+                                >
+                                    → Ver Mais Artigos sobre Otorrinolaringologia
+                                </Link>
+                                <Link
+                                    href="/#servicos"
+                                    className="block text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] transition-colors font-medium"
+                                >
+                                    → Conheça Nossos Serviços Especializados
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

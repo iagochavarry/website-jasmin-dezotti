@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 import ClientLogo01 from "@/public/images/client-logo-01.svg";
 import ClientLogo02 from "@/public/images/client-logo-02.svg";
 import ClientLogo03 from "@/public/images/client-logo-03.svg";
@@ -36,6 +37,7 @@ export default function Atendimento() {
             <section>
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
                     <div className="py-12 md:py-20">
+                        <Breadcrumbs items={[{ label: "Atendimento" }]} />
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="mb-8">
                                 <div className="inline-flex items-center gap-3 pb-3 before:h-px before:w-8 before:bg-linear-to-r before:from-transparent before:to-[var(--color-secondary)] after:h-px after:w-8 after:bg-linear-to-l after:from-transparent after:to-[var(--color-secondary)]">

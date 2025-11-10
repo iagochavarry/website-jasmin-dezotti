@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 export const metadata = {
     title: "Blog - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
@@ -18,7 +19,7 @@ export const metadata = {
     },
 };
 
-// Mock data - substituir futuramente por CMS ou banco de dados
+// Mock data - apenas posts com conteúdo completo desenvolvido
 const blogPosts = [
     {
         slug: "cuidados-com-rinite-alergica",
@@ -44,30 +45,6 @@ const blogPosts = [
         date: "5 de Novembro, 2024",
         image: "/images/workflow-03.png",
     },
-    {
-        slug: "saude-auditiva-prevencao",
-        title: "Saúde Auditiva: Prevenção é Fundamental",
-        subtitle: "Dicas importantes para preservar sua audição e prevenir problemas auditivos.",
-        category: "Otologia",
-        date: "1 de Novembro, 2024",
-        image: "/images/workflow-01.png",
-    },
-    {
-        slug: "cuidados-com-a-voz",
-        title: "Cuidados com a Voz: Guia Completo",
-        subtitle: "Orientações para manter a saúde vocal e prevenir problemas na laringe.",
-        category: "Laringologia",
-        date: "28 de Outubro, 2024",
-        image: "/images/workflow-02.png",
-    },
-    {
-        slug: "cirurgia-de-septo-nasal",
-        title: "Cirurgia de Desvio de Septo: O que Esperar",
-        subtitle: "Entenda o procedimento, recuperação e benefícios da septoplastia.",
-        category: "Cirurgia",
-        date: "25 de Outubro, 2024",
-        image: "/images/workflow-03.png",
-    },
 ];
 
 export default function Blog() {
@@ -77,6 +54,7 @@ export default function Blog() {
             <section>
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
                     <div className="py-12 md:py-20">
+                        <Breadcrumbs items={[{ label: "Blog" }]} />
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="inline-flex items-center gap-3 pb-3 before:h-px before:w-8 before:bg-linear-to-r before:from-transparent before:to-[var(--color-secondary)] after:h-px after:w-8 after:bg-linear-to-l after:from-transparent after:to-[var(--color-secondary)]">
                                 <span className="inline-flex bg-linear-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-transparent">
@@ -147,6 +125,60 @@ export default function Blog() {
                                     </div>
                                 </Link>
                             ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Links Úteis */}
+            <section>
+                <div className="mx-auto max-w-6xl px-4 sm:px-6">
+                    <div className="border-t border-[var(--color-accent)] py-12 md:py-20">
+                        <div className="mb-12 text-center">
+                            <h2 className="bg-[linear-gradient(to_right,var(--color-primary),var(--color-secondary),var(--color-primary))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-2xl font-semibold text-transparent md:text-3xl">
+                                Explore Mais Conteúdo
+                            </h2>
+                            <p className="text-[var(--color-text-secondary)]">
+                                Descubra mais sobre nossos serviços e especialidades médicas.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-6 md:grid-cols-3">
+                            <Link
+                                href="/#sobre"
+                                className="group p-6 bg-white rounded-2xl border border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-all duration-300 hover:shadow-md"
+                            >
+                                <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors mb-2">
+                                    Sobre a Dra. Jasmin
+                                </h3>
+                                <p className="text-sm text-[var(--color-text-secondary)]">
+                                    Conheça a formação e experiência da nossa especialista em otorrinolaringologia.
+                                </p>
+                            </Link>
+
+                            <Link
+                                href="/atendimento"
+                                className="group p-6 bg-white rounded-2xl border border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-all duration-300 hover:shadow-md"
+                            >
+                                <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors mb-2">
+                                    Locais de Atendimento
+                                </h3>
+                                <p className="text-sm text-[var(--color-text-secondary)]">
+                                    Encontre o consultório mais próximo e agende sua consulta.
+                                </p>
+                            </Link>
+
+                            <Link
+                                href="/#servicos"
+                                className="group p-6 bg-white rounded-2xl border border-[var(--color-accent)] hover:border-[var(--color-primary)] transition-all duration-300 hover:shadow-md"
+                            >
+                                <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors mb-2">
+                                    Nossos Serviços
+                                </h3>
+                                <p className="text-sm text-[var(--color-text-secondary)]">
+                                    Descubra todos os tratamentos e procedimentos que oferecemos.
+                                </p>
+                            </Link>
                         </div>
                     </div>
                 </div>
