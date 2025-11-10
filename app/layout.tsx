@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Image from "next/image";
 
-import Header from "@/components/ui/header";
+import ConditionalHeader from "@/components/ui/conditional-header";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
 const inter = Inter({
@@ -81,7 +81,7 @@ export default function RootLayout({
         </div>
 
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip relative">
-          <Header />
+          <ConditionalHeader />
           {children}
         </div>
       </body>
