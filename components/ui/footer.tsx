@@ -169,7 +169,7 @@ export default function Footer() {
                 Dra. Jasmin Dezotti
               </p>
               <p className="mb-3 text-[var(--color-text-secondary)]">
-                CRM 52125608-5
+                CRM 52125602-5
               </p>
               <p className="mb-3 text-[var(--color-text-secondary)] text-xs">
                 Otorrinolaringologia

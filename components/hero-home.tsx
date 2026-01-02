@@ -43,7 +43,7 @@ export default function HeroHome() {
                     Dra. Jasmin Dezotti Lovisi
                   </h1>
                   <p className="text-lg md:text-xl text-[var(--color-text-secondary)] mt-2">
-                    Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125608-5
+                    Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125602-5
                   </p>
                 </div>
               </div>
