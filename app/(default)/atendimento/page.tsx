@@ -247,7 +247,7 @@ export default function Atendimento() {
                                     Entre em contato para consultar disponibilidade
                                 </p>
                                 <a
-                                    href="https://wa.me/+5521987449385?text=Olá%2C%20gostaria%20de%20saber%20se%20aceitam%20meu%20convênio."
+                                    href="https://wa.me/+5521997180604?text=Olá%2C%20gostaria%20de%20saber%20se%20aceitam%20meu%20convênio."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] transition-colors underline"

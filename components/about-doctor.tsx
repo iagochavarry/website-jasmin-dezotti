@@ -62,7 +62,7 @@ export default function AboutDoctor() {
                                                     <li>• Observership Cleveland Clinic em Pneumologia (EUA)</li>
                                                 </ul>
                                             </div>
-                                            
+
                                             <div>
                                                 <div className="flex items-start gap-2 mb-2">
                                                     <svg
@@ -77,7 +77,7 @@ export default function AboutDoctor() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div className="flex items-start gap-2 mb-2">
                                                     <svg
@@ -88,7 +88,7 @@ export default function AboutDoctor() {
                                                         <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                                                     </svg>
                                                     <span>
-                                                        <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ (em andamento)
+                                                        <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ <span className="text-[var(--color-primary)]/70 italic">(conclusão 04/27)</span>
                                                     </span>
                                                 </div>
                                             </div>

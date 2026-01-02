@@ -2,21 +2,10 @@
 
 import { useState } from "react";
 import useMasonry from "@/utils/useMasonry";
-import Image, { StaticImageData } from "next/image";
 import ScrollIndicator from "@/components/scroll-indicator";
-import TestimonialImg01 from "@/public/images/testimonial-01.jpg";
-import TestimonialImg02 from "@/public/images/testimonial-02.jpg";
-import TestimonialImg03 from "@/public/images/testimonial-03.jpg";
-import TestimonialImg04 from "@/public/images/testimonial-04.jpg";
-import TestimonialImg05 from "@/public/images/testimonial-05.jpg";
-import TestimonialImg06 from "@/public/images/testimonial-06.jpg";
-import TestimonialImg07 from "@/public/images/testimonial-07.jpg";
-import TestimonialImg08 from "@/public/images/testimonial-08.jpg";
-import TestimonialImg09 from "@/public/images/testimonial-09.jpg";
 
 const testimonials = [
   {
-    img: TestimonialImg01,
     name: "Maria Silva",
     company: "Paciente",
     content:
@@ -24,7 +13,6 @@ const testimonials = [
     categories: [1, 2], // Rinologia (sinusite)
   },
   {
-    img: TestimonialImg02,
     name: "Carlos Mendes",
     company: "Paciente",
     content:
@@ -32,7 +20,6 @@ const testimonials = [
     categories: [1, 3], // Otologia (problema de audição)
   },
   {
-    img: TestimonialImg03,
     name: "Ana Paula Costa",
     company: "Paciente",
     content:
@@ -40,7 +27,6 @@ const testimonials = [
     categories: [1, 3], // Otologia (otite)
   },
   {
-    img: TestimonialImg04,
     name: "Roberto Santos",
     company: "Paciente",
     content:
@@ -48,7 +34,6 @@ const testimonials = [
     categories: [1, 2, 5], // Rinologia + Cirurgias (cirurgia de desvio de septo)
   },
   {
-    img: TestimonialImg05,
     name: "Juliana Oliveira",
     company: "Paciente",
     content:
@@ -56,7 +41,6 @@ const testimonials = [
     categories: [1, 2], // Rinologia (rinite alérgica)
   },
   {
-    img: TestimonialImg06,
     name: "Pedro Alves",
     company: "Paciente",
     content:
@@ -64,7 +48,6 @@ const testimonials = [
     categories: [1, 3], // Otologia (zumbido no ouvido)
   },
   {
-    img: TestimonialImg07,
     name: "Fernanda Lima",
     company: "Paciente",
     content:
@@ -72,7 +55,6 @@ const testimonials = [
     categories: [1], // Todos (depoimento genérico)
   },
   {
-    img: TestimonialImg08,
     name: "Marcelo Rocha",
     company: "Paciente",
     content:
@@ -80,7 +62,6 @@ const testimonials = [
     categories: [1, 4], // Laringologia (problema vocal)
   },
   {
-    img: TestimonialImg09,
     name: "Beatriz Ferreira",
     company: "Paciente",
     content:
@@ -220,7 +201,6 @@ export default function Testimonials() {
 
 interface TestimonialProps {
   testimonial: {
-    img: StaticImageData;
     name: string;
     company: string;
     content: string;
@@ -253,13 +233,6 @@ export function Testimonial({ testimonial, children }: TestimonialProps) {
           {restContent && <span className="text-[var(--color-text-secondary)]">{restContent}&rdquo;</span>}
         </p>
         <div className="flex items-center gap-3 pt-2 border-t border-[var(--color-accent)]">
-          <Image
-            className="inline-flex shrink-0 rounded-full ring-2 ring-[var(--color-accent)] group-hover:ring-[var(--color-primary)]/30 transition-all"
-            src={testimonial.img}
-            width={40}
-            height={40}
-            alt={testimonial.name}
-          />
           <div className="text-sm font-medium text-[var(--color-text-primary)]">
             <div className="font-semibold">{testimonial.name}</div>
             <div className="text-xs text-[var(--color-text-muted)]">{testimonial.company}</div>

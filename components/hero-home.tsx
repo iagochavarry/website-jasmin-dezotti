@@ -104,7 +104,7 @@ export default function HeroHome() {
                       <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                     </svg>
                     <p className="text-sm text-[var(--color-text-secondary)]">
-                      <span className="font-medium text-[var(--color-text-primary)]">Especialização em Rinologia:</span> UERJ / HUPE <span className="text-[var(--color-primary)]/70">(em andamento)</span>
+                      <span className="font-medium text-[var(--color-text-primary)]">Especialização em Rinologia:</span> UERJ / HUPE <span className="text-[var(--color-primary)]/70 italic">(conclusão 04/27)</span>
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
