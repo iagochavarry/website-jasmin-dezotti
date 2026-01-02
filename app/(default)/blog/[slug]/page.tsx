@@ -311,54 +311,6 @@ const blogPostsData: Record<string, any> = {
       <p>Como <strong>otorrinolaringologista em Madureira e Zona Sul</strong>, atendo pacientes com rinite alérgica oferecendo diagnóstico preciso e tratamento personalizado. <a href="/atendimento">Agende sua consulta</a> para uma avaliação completa.</p>
     `,
     },
-    "quando-procurar-otorrino": {
-        title: "Quando Procurar um Otorrinolaringologista?",
-        subtitle: "Conheça os principais sinais de que você deve consultar um especialista em otorrino.",
-        category: "Saúde",
-        date: "10 de Novembro, 2024",
-        author: "Dra. Jasmin Dezotti",
-        image: "/images/workflow-02.png",
-        content: `
-      <p>Muitas pessoas têm dúvidas sobre quando é necessário consultar um otorrinolaringologista. Este especialista cuida de problemas relacionados ao ouvido, nariz e garganta.</p>
-
-      <h2>Sinais de alerta</h2>
-      <p>Procure um otorrinolaringologista se você apresenta:</p>
-      <ul>
-        <li>Dor de garganta recorrente</li>
-        <li>Ronco persistente ou apneia do sono</li>
-        <li>Perda auditiva ou zumbido</li>
-        <li>Sinusite frequente</li>
-        <li>Sangramento nasal</li>
-        <li>Alterações na voz</li>
-      </ul>
-
-      <h2>Prevenção é fundamental</h2>
-      <p>O acompanhamento regular com um otorrinolaringologista pode prevenir complicações e garantir diagnóstico precoce de condições mais sérias.</p>
-    `,
-    },
-    "sinusite-cronica-tratamento": {
-        title: "Sinusite Crônica: Causas e Tratamento",
-        subtitle: "Saiba identificar a sinusite crônica e as opções de tratamento disponíveis.",
-        category: "Rinologia",
-        date: "5 de Novembro, 2024",
-        author: "Dra. Jasmin Dezotti",
-        image: "/images/workflow-03.png",
-        content: `
-      <p>A sinusite crônica é uma inflamação prolongada dos seios da face que persiste por mais de 12 semanas, mesmo com tratamento.</p>
-
-      <h2>Sintomas principais</h2>
-      <ul>
-        <li>Dor facial ou pressão</li>
-        <li>Congestão nasal persistente</li>
-        <li>Secreção nasal espessa</li>
-        <li>Redução do olfato</li>
-        <li>Dor de cabeça</li>
-      </ul>
-
-      <h2>Tratamento</h2>
-      <p>O tratamento pode incluir medicamentos, lavagem nasal e, em casos específicos, cirurgia endoscópica dos seios da face.</p>
-    `,
-    },
 };
 
 interface PageProps {

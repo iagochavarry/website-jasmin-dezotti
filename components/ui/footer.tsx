@@ -1,4 +1,6 @@
-import Logo from "./logo";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "@/public/images/LogoStyledHD-NoBG.png";
 
 export default function Footer() {
   return (
@@ -12,7 +14,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#servicos"
                 >
                   Rinologia
                 </a>
@@ -20,7 +22,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#servicos"
                 >
                   Otologia
                 </a>
@@ -28,7 +30,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#servicos"
                 >
                   Laringologia
                 </a>
@@ -36,7 +38,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#servicos"
                 >
                   Cirurgias
                 </a>
@@ -58,7 +60,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#sobre"
                 >
                   Formação
                 </a>
@@ -66,7 +68,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#depoimentos"
                 >
                   Depoimentos
                 </a>
@@ -88,9 +90,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="https://wa.me/5521999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/atendimento"
                 >
                   Agendar Consulta
                 </a>
@@ -98,7 +98,9 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="tel:+5521999999999"
+                  href="https://wa.me/+5521997734282"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Telefone
                 </a>
@@ -106,7 +108,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/atendimento"
                 >
                   Localização
                 </a>
@@ -114,7 +116,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/atendimento"
                 >
                   Convênios
                 </a>
@@ -130,7 +132,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/blog"
                 >
                   Perguntas Frequentes
                 </a>
@@ -138,7 +140,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/blog"
                 >
                   Dicas de Saúde
                 </a>
@@ -146,7 +148,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-[var(--color-text-secondary)] transition hover:text-[var(--color-primary)]"
-                  href="#0"
+                  href="/#sobre"
                 >
                   Política de Privacidade
                 </a>
@@ -156,7 +158,19 @@ export default function Footer() {
           {/* 5th block */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 lg:text-right">
             <div className="mb-3">
-              <Logo />
+              <Link
+                href="/"
+                className="group relative inline-flex shrink-0 items-center justify-center rounded-lg p-2 transition-all duration-300 hover:bg-[var(--color-background-secondary)]/50"
+                aria-label="Dra. Jasmin Dezotti"
+              >
+                <Image
+                  src={logo}
+                  alt="Logo Dra. Jasmin Dezotti"
+                  width={112}
+                  height={112}
+                  className="transition-transform duration-300 group-hover:scale-105"
+                />
+              </Link>
             </div>
             <div className="text-sm">
               <p className="mb-3 text-[var(--color-text-secondary)]">

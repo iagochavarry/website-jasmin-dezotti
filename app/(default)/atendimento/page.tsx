@@ -54,7 +54,57 @@ export default function Atendimento() {
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
                     <div className="pb-12 md:pb-20">
                         <div className="grid gap-6 md:grid-cols-2">
-                            {/* Local 1 - Oto Grupo Madureira */}
+                            {/* Local 1 - Consultório Particular */}
+                            <div className="flex flex-col rounded-xl bg-white p-5 shadow-md border border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                                <div className="mb-3 flex-grow">
+                                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
+                                        <svg
+                                            className="h-5 w-5 fill-[var(--color-primary)]"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="mb-1.5 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
+                                        Consultório Particular
+                                    </h3>
+                                    <p className="mb-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
+                                        Leblon e Praia de Botafogo
+                                    </p>
+                                    <p className="mb-3 text-xs text-[var(--color-text-secondary)]">
+                                        Rio de Janeiro - RJ
+                                        <br />
+                                        <span className="text-xs text-[var(--color-text-muted)]">Endereço informado no agendamento</span>
+                                    </p>
+
+                                    {/* Ícones informativos */}
+                                    <div className="space-y-1.5 mb-3 pb-3 border-b border-[var(--color-accent)]">
+                                        <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Horário sob agendamento</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
+                                            <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                            <span>Atendimento particular</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a
+                                    href="https://wa.me/+5521997734282?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-sm btn-primary w-full hover:scale-105 transition-transform"
+                                >
+                                    Agendar Consulta
+                                </a>
+                            </div>
+
+                            {/* Local 2 - Oto Grupo Madureira */}
                             <div className="flex flex-col rounded-xl bg-white p-5 shadow-md border border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                                 <div className="mb-3 flex-grow">
                                     <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
@@ -86,7 +136,7 @@ export default function Atendimento() {
                                             <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
-                                            <span>Horário sob agendamento</span>
+                                            <span>Sábado de 8h até 13h</span>
                                         </div>
                                         <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
                                             <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,56 +159,6 @@ export default function Atendimento() {
                                 </div>
                                 <a
                                     href="https://wa.me/+5521997180604?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-sm btn-primary w-full hover:scale-105 transition-transform"
-                                >
-                                    Agendar Consulta
-                                </a>
-                            </div>
-
-                            {/* Local 2 - Consultório Particular */}
-                            <div className="flex flex-col rounded-xl bg-white p-5 shadow-md border border-[var(--color-accent)] hover:border-[var(--color-primary)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-                                <div className="mb-3 flex-grow">
-                                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
-                                        <svg
-                                            className="h-5 w-5 fill-[var(--color-primary)]"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="mb-1.5 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                                        Consultório Particular
-                                    </h3>
-                                    <p className="mb-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
-                                        Zona Sul
-                                    </p>
-                                    <p className="mb-3 text-xs text-[var(--color-text-secondary)]">
-                                        Local: Zona Sul, Rio de Janeiro - RJ
-                                        <br />
-                                        <span className="text-xs text-[var(--color-text-muted)]">Endereço informado no agendamento</span>
-                                    </p>
-
-                                    {/* Ícones informativos */}
-                                    <div className="space-y-1.5 mb-3 pb-3 border-b border-[var(--color-accent)]">
-                                        <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
-                                            <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span>Horário sob agendamento</span>
-                                        </div>
-                                        <div className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)]">
-                                            <svg className="w-3.5 h-3.5 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                            </svg>
-                                            <span>Atendimento particular</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a
-                                    href="https://wa.me/+5521997734282?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin%20Dezotti."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-sm btn-primary w-full hover:scale-105 transition-transform"
@@ -191,21 +191,21 @@ export default function Atendimento() {
 
                         <div className="flex justify-center">
                             {/* Hospital - HUPE/UERJ */}
-                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300 max-w-sm">
-                                <div className="h-32 w-full overflow-hidden">
+                            <div className="rounded-xl bg-white overflow-hidden shadow-sm border border-[var(--color-accent)] hover:shadow-md transition-shadow duration-300 max-w-md">
+                                <div className="h-40 w-full overflow-hidden">
                                     <Image
                                         src={HupeImage}
                                         alt="HUPE/UERJ"
-                                        width={400}
-                                        height={128}
+                                        width={480}
+                                        height={160}
                                         className="h-full w-full object-cover"
                                     />
                                 </div>
-                                <div className="p-6 text-center">
-                                    <h3 className="font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
+                                <div className="p-7 text-center">
+                                    <h3 className="font-nacelle text-xl font-semibold text-[var(--color-text-primary)]">
                                         HUPE/UERJ
                                     </h3>
-                                    <p className="text-sm text-[var(--color-text-secondary)] mt-2">
+                                    <p className="text-base text-[var(--color-text-secondary)] mt-2">
                                         Hospital Universitário
                                         <br />
                                         Pedro Ernesto

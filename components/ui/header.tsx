@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Logo from "./logo";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -92,11 +91,6 @@ export default function Header() {
       <header className="sticky top-0 z-50 w-full pt-2 md:pt-5 pb-2 bg-[var(--color-background-primary)]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="relative flex h-16 items-center justify-between gap-6 rounded-2xl bg-white/95 px-6 shadow-md border border-[var(--color-accent)] backdrop-blur-sm">
-            {/* Site branding */}
-            <div className="flex items-center flex-shrink-0">
-              <Logo />
-            </div>
-
             {/* Desktop navigation - Centered */}
             <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
               <a

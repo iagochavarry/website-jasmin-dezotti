@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "@/public/images/logo.png";
+import logo from "@/public/images/LogoStyledHD-NoBG.png";
 
 export default function SoonAvailable() {
     const [mounted, setMounted] = useState(false);

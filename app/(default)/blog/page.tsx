@@ -37,22 +37,6 @@ const blogPosts = [
         date: "15 de Novembro, 2024",
         image: "/images/workflow-01.png",
     },
-    {
-        slug: "quando-procurar-otorrino",
-        title: "Quando Procurar um Otorrinolaringologista?",
-        subtitle: "Conheça os principais sinais de que você deve consultar um especialista em otorrino.",
-        category: "Saúde",
-        date: "10 de Novembro, 2024",
-        image: "/images/workflow-02.png",
-    },
-    {
-        slug: "sinusite-cronica-tratamento",
-        title: "Sinusite Crônica: Causas e Tratamento",
-        subtitle: "Saiba identificar a sinusite crônica e as opções de tratamento disponíveis.",
-        category: "Rinologia",
-        date: "5 de Novembro, 2024",
-        image: "/images/workflow-03.png",
-    },
 ];
 
 export default function Blog() {

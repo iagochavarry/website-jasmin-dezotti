@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import VideoThumb from "@/public/images/hero-image-01.jpg";
+import Logo from "@/public/images/LogoStyledHD-NoBG.png";
 
 export default function HeroHome() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,71 +24,132 @@ export default function HeroHome() {
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-background-primary)] via-[var(--color-background-primary)] to-[var(--color-secondary)]/5 -z-10"></div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Hero content */}
         <div className="py-12 md:py-20">
-          <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center md:gap-10 lg:gap-16">
-            {/* Text content - Left side */}
-            <div className="text-center md:text-left">
-              <div className="mb-6">
-                <h1
-                  className="bg-[linear-gradient(to_right,var(--color-primary),var(--color-secondary),var(--color-primary))] bg-[length:200%_auto] bg-clip-text pb-3 font-nacelle text-3xl font-semibold text-transparent sm:text-4xl md:text-5xl lg:whitespace-nowrap mb-2"
-                  data-aos="fade-up"
-                  data-aos-delay={50}
-                >
-                  Dra. Jasmin Dezotti
-                </h1>
-                <p
-                  className="text-lg text-[var(--color-text-primary)] font-medium mb-2 md:text-xl lg:whitespace-nowrap"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
-                >
-                  Otorrinolaringologista
-                </p>
-                <p
-                  className="text-sm text-[var(--color-text-secondary)] md:text-base lg:whitespace-nowrap"
-                  data-aos="fade-up"
-                  data-aos-delay={150}
-                >
-                  CRM 52125608-5 | Especialista em Rinologia
-                </p>
-              </div>
-              <div className="mx-auto max-w-3xl md:mx-0">
-                <p
-                  className="mb-8 text-xl text-[var(--color-text-secondary)]"
-                  data-aos="fade-up"
-                  data-aos-delay={200}
-                >
-                  Cuidado de excelência e especializado para sua saúde respiratória.
-                  Atendimento dedicado com foco em diagnóstico preciso e tratamentos personalizados.
-                </p>
-                <div className="mx-auto max-w-xs sm:max-w-none md:mx-0">
-                  <div data-aos="fade-up" data-aos-delay={400}>
-                    <a
-                      className="btn btn-primary w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                      href="/atendimento"
-                    >
-                      Agendar Consulta
-                    </a>
-                  </div>
-                  <p className="text-sm text-[var(--color-text-muted)] mt-3 text-center sm:text-left" data-aos="fade-up" data-aos-delay={500}>
-                    Atendimento dedicado com foco no seu bem-estar
+          {/* Content wrapper - matches About section width */}
+          <div className="mx-auto max-w-5xl">
+            {/* ROW 1: Brand Bar - Centered */}
+            <div className="flex flex-col items-center justify-center mb-10 md:mb-12" data-aos="fade-down">
+              <div className="flex items-center gap-5 md:gap-6">
+                <Image
+                  src={Logo}
+                  alt="Logo Dra. Jasmin Dezotti"
+                  width={132}
+                  height={132}
+                  className="w-[106px] h-[106px] md:w-[123px] md:h-[123px] object-contain flex-shrink-0"
+                  priority
+                />
+                <div className="text-center md:text-left">
+                  <h1 className="bg-[linear-gradient(135deg,var(--color-primary),var(--color-secondary))] bg-clip-text font-nacelle text-4xl md:text-5xl lg:text-6xl font-semibold text-transparent leading-tight">
+                    Dra. Jasmin Dezotti Lovisi
+                  </h1>
+                  <p className="text-lg md:text-xl text-[var(--color-text-secondary)] mt-2">
+                    Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125608-5
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Image - Right side */}
-            <div className="flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay={300}>
-              <div className="relative w-full max-w-md overflow-hidden rounded-2xl shadow-2xl border-4 border-white/50 hover:scale-[1.02] transition-transform duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/10 to-transparent z-10"></div>
-                <Image
-                  src={VideoThumb}
-                  alt="Dra. Jasmin Dezotti - Otorrinolaringologista"
-                  width={400}
-                  height={600}
-                  className="h-auto w-full object-cover"
-                  priority
-                />
+            {/* ROW 2: Two columns - Value Proposition + Image */}
+            <div className="grid gap-12 md:grid-cols-5 md:gap-16 md:items-start">
+              {/* Left: Value Proposition */}
+              <div className="md:col-span-3 text-center md:text-left flex flex-col">
+                <h2
+                  className="font-nacelle text-xl md:text-2xl lg:text-3xl font-medium text-[var(--color-text-primary)] leading-snug mb-4"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                >
+                  Excelência para sua{" "}
+                  <span className="text-[var(--color-primary)]">saúde respiratória</span>
+                </h2>
+                <p
+                  className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6"
+                  data-aos="fade-up"
+                  data-aos-delay={150}
+                >
+                  Atendimento dedicado com foco em diagnóstico preciso e tratamentos personalizados.
+                </p>
+
+                {/* Professional Highlights */}
+                <div className="mb-6 space-y-2" data-aos="fade-up" data-aos-delay={175}>
+                  <div className="flex items-start gap-2">
+                    <svg
+                      className="mt-1 h-4 w-4 shrink-0 fill-[var(--color-primary)]"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                    </svg>
+                    <p className="text-sm text-[var(--color-text-secondary)]">
+                      <span className="font-medium text-[var(--color-text-primary)]">Graduação:</span> Faculdade Souza Marques
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg
+                      className="mt-1 h-4 w-4 shrink-0 fill-[var(--color-primary)]"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                    </svg>
+                    <p className="text-sm text-[var(--color-text-secondary)]">
+                      <span className="font-medium text-[var(--color-text-primary)]">Residência:</span> UERJ / HUPE
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg
+                      className="mt-1 h-4 w-4 shrink-0 fill-[var(--color-primary)]"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                    </svg>
+                    <p className="text-sm text-[var(--color-text-secondary)]">
+                      <span className="font-medium text-[var(--color-text-primary)]">Especialização em Rinologia:</span> UERJ / HUPE <span className="text-[var(--color-primary)]/70">(em andamento)</span>
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg
+                      className="mt-1 h-4 w-4 shrink-0 fill-[var(--color-primary)]"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                    </svg>
+                    <p className="text-sm text-[var(--color-text-secondary)]">
+                      <span className="font-medium text-[var(--color-text-primary)]">Observership:</span> Cleveland Clinic em Pneumologia <span className="text-[var(--color-primary)]/70">(EUA)</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start mt-auto" data-aos="fade-up" data-aos-delay={200}>
+                  <a
+                    className="btn btn-primary shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                    href="/atendimento"
+                  >
+                    Agendar Consulta
+                  </a>
+                  <a
+                    href="/#sobre"
+                    className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    Conheça mais →
+                  </a>
+                </div>
+              </div>
+
+              {/* Right: Hero Image */}
+              <div className="md:col-span-2 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay={200}>
+                <div className="relative w-full max-w-[380px] overflow-hidden rounded-2xl shadow-lg border-2 border-white/60">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/5 to-transparent z-10"></div>
+                  <Image
+                    src={VideoThumb}
+                    alt="Dra. Jasmin Dezotti - Otorrinolaringologista"
+                    width={380}
+                    height={520}
+                    className="h-auto w-full object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -101,7 +163,7 @@ export default function HeroHome() {
       >
         <div className="flex flex-col items-center gap-3">
           <span className="text-sm text-[var(--color-text-muted)] font-medium tracking-wide">
-            Sobre Jasmin Dezzoti
+            Sobre a Dra. Jasmin
           </span>
           <svg
             className="w-5 h-5 text-[var(--color-primary)]"
