@@ -1,10 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "./logo";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === "/";
 
   const menuItems = [
     { href: "/#sobre", label: "Sobre" },
@@ -13,6 +17,33 @@ export default function Header() {
     { href: "/#depoimentos", label: "Depoimentos" },
     { href: "/blog", label: "Blog" },
   ];
+
+  // Função para scroll suave com offset
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      
+      // Se não estiver na home, navegar para home primeiro
+      if (!isHomePage) {
+        router.push(`/#${targetId}`);
+        return;
+      }
+      
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        const headerOffset = 100; // Offset para compensar header fixo
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   // Prevenir scroll do body quando menu estiver aberto
   useEffect(() => {
@@ -25,6 +56,28 @@ export default function Header() {
       document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
+
+  // Scroll para seção quando página carrega com hash
+  useEffect(() => {
+    if (isHomePage && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const element = document.getElementById(hash);
+      
+      if (element) {
+        // Pequeno delay para garantir que a página carregou
+        setTimeout(() => {
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 100);
+      }
+    }
+  }, [isHomePage, pathname]);
 
   return (
     <>
@@ -48,33 +101,31 @@ export default function Header() {
             <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
               <a
                 href="/#sobre"
+                onClick={(e) => handleSmoothScroll(e, "/#sobre")}
                 className="text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)] hover:underline underline-offset-4"
               >
                 Sobre
               </a>
               <a
                 href="/#servicos"
+                onClick={(e) => handleSmoothScroll(e, "/#servicos")}
                 className="text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)] hover:underline underline-offset-4"
               >
                 Serviços
               </a>
               <a
                 href="/#diferenciais"
+                onClick={(e) => handleSmoothScroll(e, "/#diferenciais")}
                 className="text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)] hover:underline underline-offset-4"
               >
                 Diferenciais
               </a>
               <a
                 href="/#depoimentos"
+                onClick={(e) => handleSmoothScroll(e, "/#depoimentos")}
                 className="text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)] hover:underline underline-offset-4"
               >
                 Depoimentos
-              </a>
-              <a
-                href="/blog"
-                className="text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-primary)] hover:underline underline-offset-4"
-              >
-                Blog
               </a>
             </nav>
 
@@ -101,6 +152,12 @@ export default function Header() {
             {/* Action buttons */}
             <div className="hidden lg:flex items-center gap-3 ml-auto flex-shrink-0">
               <a
+                href="/blog"
+                className="btn-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+              >
+                Blog
+              </a>
+              <a
                 href="/atendimento"
                 className="btn-sm btn-primary"
               >
@@ -119,8 +176,11 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => {
+                    handleSmoothScroll(e, item.href);
+                    setMobileMenuOpen(false);
+                  }}
                   className="px-6 py-3 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background-secondary)]/50 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>

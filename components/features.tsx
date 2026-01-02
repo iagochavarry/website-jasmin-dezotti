@@ -16,8 +16,8 @@ export default function Features() {
               Diferenciais do Atendimento
             </h2>
             <p className="text-lg text-[var(--color-text-secondary)]">
-              Formação sólida, especialização de excelência e uma abordagem centrada
-              no paciente. Cuidado médico que combina experiência técnica com empatia.
+              Formação sólida em grandes centros, especialização de excelência e experiência
+              clínica consolidada. Cuidado médico que combina conhecimento técnico com empatia.
             </p>
           </div>
           {/* Items */}
@@ -41,8 +41,8 @@ export default function Features() {
                 Formação de Excelência
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Graduação pela Faculdade Souza Marques e Residência Médica na UERJ -
-                Hospital Pedro Ernesto, instituições reconhecidas pela qualidade do ensino.
+                Graduação pela Faculdade Souza Marques com estágios em centros de referência,
+                incluindo Cleveland Clinic (EUA). Residência em ORL na UERJ - Hospital Pedro Ernesto.
               </p>
             </article>
             <article className="group p-6 rounded-xl bg-white border border-[var(--color-accent)] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -61,8 +61,8 @@ export default function Features() {
                 Especialização em Rinologia
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Fellowship em Rinologia pelo HUPE/UERJ (2026),
-                referência nacional em cirurgias nasais e tratamento de sinusites.
+                Fellowship em Rinologia pelo HUPE/UERJ (em andamento), com aprofundamentos
+                em dissecção de rinologia e base de crânio pelo CETEB.
               </p>
             </article>
             <article className="group p-6 rounded-xl bg-white border border-[var(--color-accent)] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -81,11 +81,11 @@ export default function Features() {
                 </svg>
               </div>
               <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                Atendimento de Qualidade
+                Experiência em Grandes Centros
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Consultas com tempo dedicado para ouvir, entender e esclarecer todas
-                as dúvidas. Cada paciente é único e merece atenção personalizada.
+                Atendimento consolidado em instituições de referência: UERJ, OTO Grupo
+                (múltiplas unidades) e Pires de Melo, garantindo experiência diversificada.
               </p>
             </article>
             <article className="group p-6 rounded-xl bg-white border border-[var(--color-accent)] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -109,11 +109,11 @@ export default function Features() {
                 </svg>
               </div>
               <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                Tecnologia e Precisão
+                Participação Científica
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Diagnósticos precisos utilizando equipamentos modernos para
-                exames como videoendoscopia nasal, audiometria e impedanciometria.
+                Apresentações em congressos nacionais (FORL - São Paulo e Sociedade de
+                Otorrinolaringologia - Rio de Janeiro), mantendo-se atualizada com as melhores práticas.
               </p>
             </article>
             <article className="group p-6 rounded-xl bg-white border border-[var(--color-accent)] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -132,11 +132,11 @@ export default function Features() {
                 </svg>
               </div>
               <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                Tratamentos Baseados em Evidência
+                Aprofundamento Técnico
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Condutas médicas atualizadas seguindo protocolos científicos e
-                as melhores práticas da medicina contemporânea.
+                Treinamento especializado em dissecção de mastoide (UFRJ) e técnicas
+                avançadas de rinologia e base de crânio, garantindo precisão cirúrgica.
               </p>
             </article>
             <article className="group p-6 rounded-xl bg-white border border-[var(--color-accent)] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -155,11 +155,11 @@ export default function Features() {
                 </svg>
               </div>
               <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                Acompanhamento Contínuo
+                Atendimento Personalizado
               </h3>
               <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                Suporte ao paciente durante todo o tratamento, com orientações
-                claras e acessibilidade para tirar dúvidas.
+                Consultas com tempo dedicado para ouvir, entender e esclarecer todas
+                as dúvidas. Cada paciente é único e merece atenção individualizada.
               </p>
             </article>
           </div>

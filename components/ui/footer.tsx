@@ -161,10 +161,9 @@ export default function Footer() {
             <div className="text-sm">
               <p className="mb-3 text-[var(--color-text-secondary)]">
                 Dra. Jasmin Dezotti
-                <span className="text-[var(--color-text-muted)]"> · </span>
-                <span className="text-[var(--color-text-secondary)]">
-                  CRM 52125608-5
-                </span>
+              </p>
+              <p className="mb-3 text-[var(--color-text-secondary)]">
+                CRM 52125608-5
               </p>
               <p className="mb-3 text-[var(--color-text-secondary)] text-xs">
                 Otorrinolaringologia

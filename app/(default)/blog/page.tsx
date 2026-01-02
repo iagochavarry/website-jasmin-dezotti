@@ -22,6 +22,14 @@ export const metadata = {
 // Mock data - apenas posts com conteúdo completo desenvolvido
 const blogPosts = [
     {
+        slug: "o-que-e-otorrino",
+        title: "O que é Otorrinolaringologia?",
+        subtitle: "Entenda o que faz um otorrinolaringologista e quando procurar este especialista.",
+        category: "Saúde",
+        date: "20 de Novembro, 2024",
+        image: "/images/otorrino-icons.png",
+    },
+    {
         slug: "cuidados-com-rinite-alergica",
         title: "Cuidados Essenciais com Rinite Alérgica",
         subtitle: "Entenda os sintomas, causas e como controlar a rinite alérgica no dia a dia.",

@@ -38,47 +38,120 @@ export default function AboutDoctor() {
 
                                 <div className="space-y-6 pt-4">
                                     <div>
-                                        <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                                            Formação Acadêmica
+                                        <h3 className="mb-3 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
+                                            Trajetória Profissional
                                         </h3>
-                                        <ul className="space-y-2 text-base">
-                                            <li className="flex items-start gap-2">
-                                                <svg
-                                                    className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
-                                                </svg>
-                                                <span>
-                                                    <strong className="text-[var(--color-text-primary)]">Graduação:</strong> Faculdade Souza Marques
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <svg
-                                                    className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
-                                                </svg>
-                                                <span>
-                                                    <strong className="text-[var(--color-text-primary)]">Residência:</strong> UERJ – Hospital Pedro Ernesto
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <svg
-                                                    className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
-                                                </svg>
-                                                <span>
-                                                    <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ (2026)
-                                                </span>
-                                            </li>
-                                        </ul>
+                                        <div className="space-y-4 text-base">
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Graduação:</strong> Faculdade Souza Marques
+                                                    </span>
+                                                </div>
+                                                <ul className="ml-7 space-y-1.5 text-sm text-[var(--color-text-secondary)]">
+                                                    <li>• Estágio no Centro de Tratamento de Queimados (Hospital Federal do Andaraí)</li>
+                                                    <li>• Estágio em Pesquisa na UFRJ (Neuroimunologia)</li>
+                                                    <li>• Estágio em Terapia Intensiva na Rede D'Or</li>
+                                                    <li>• Observership Cleveland Clinic em Pneumologia (EUA)</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Residência:</strong> Otorrinolaringologia - UERJ (Hospital Pedro Ernesto)
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Fellowship:</strong> Rinologia - HUPE/UERJ (em andamento)
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Aprofundamentos:</strong>
+                                                    </span>
+                                                </div>
+                                                <ul className="ml-7 space-y-1.5 text-sm text-[var(--color-text-secondary)]">
+                                                    <li>• Dissecção de Mastoide - UFRJ</li>
+                                                    <li>• Dissecção de Rinologia e Base de Crânio - CETEB</li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Apresentações em Congressos:</strong>
+                                                    </span>
+                                                </div>
+                                                <ul className="ml-7 space-y-1.5 text-sm text-[var(--color-text-secondary)]">
+                                                    <li>• Congresso FORL - São Paulo</li>
+                                                    <li>• Sociedade de Otorrinolaringologia - Rio de Janeiro</li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <div className="flex items-start gap-2 mb-2">
+                                                    <svg
+                                                        className="mt-1 h-5 w-5 shrink-0 fill-[var(--color-primary)]"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                                                    </svg>
+                                                    <span>
+                                                        <strong className="text-[var(--color-text-primary)]">Experiência Clínica:</strong>
+                                                    </span>
+                                                </div>
+                                                <ul className="ml-7 space-y-1.5 text-sm text-[var(--color-text-secondary)]">
+                                                    <li>• UERJ - Hospital Pedro Ernesto</li>
+                                                    <li>• OTO Grupo (Ipanema, Barra, Tijuca, Madureira)</li>
+                                                    <li>• Pires de Melo (Niterói)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div>
@@ -91,18 +164,6 @@ export default function AboutDoctor() {
                                             alterações estruturais como desvio de septo. Também ofereço atendimento
                                             completo em otologia e laringologia, cuidando da saúde auditiva e vocal
                                             dos meus pacientes.
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <h3 className="mb-2 font-nacelle text-lg font-semibold text-[var(--color-text-primary)]">
-                                            Filosofia de Atendimento
-                                        </h3>
-                                        <p>
-                                            Cada paciente é único e merece um tratamento personalizado. Dedico tempo
-                                            para ouvir suas queixas, entender seu histórico e esclarecer todas as
-                                            dúvidas. Meu objetivo é proporcionar não apenas alívio dos sintomas, mas
-                                            também educação sobre saúde e prevenção de doenças.
                                         </p>
                                     </div>
                                 </div>
