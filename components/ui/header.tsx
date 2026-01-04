@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import HomeImg from "@/public/images/home.png";
+import HomeImg from "@/public/images/LogoStyledHD.png";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,15 +24,15 @@ export default function Header() {
     if (href.startsWith("/#")) {
       e.preventDefault();
       const targetId = href.substring(2);
-      
+
       // Se não estiver na home, navegar para home primeiro
       if (!isHomePage) {
         router.push(`/#${targetId}`);
         return;
       }
-      
+
       const element = document.getElementById(targetId);
-      
+
       if (element) {
         const headerOffset = 100; // Offset para compensar header fixo
         const elementPosition = element.getBoundingClientRect().top;
@@ -63,7 +63,7 @@ export default function Header() {
     if (isHomePage && window.location.hash) {
       const hash = window.location.hash.substring(1);
       const element = document.getElementById(hash);
-      
+
       if (element) {
         // Pequeno delay para garantir que a página carregou
         setTimeout(() => {
