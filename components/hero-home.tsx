@@ -27,22 +27,22 @@ export default function HeroHome() {
         <div className="py-12 md:py-20">
           {/* Content wrapper - matches About section width */}
           <div className="mx-auto max-w-5xl">
-            {/* ROW 1: Brand Bar - Centered */}
-            <div className="flex flex-col items-center justify-center mb-10 md:mb-12" data-aos="fade-down">
-              <div className="flex items-center gap-5 md:gap-6">
+            {/* ROW 1: Brand Bar - Centered on desktop, left on mobile */}
+            <div className="flex flex-col items-start md:items-center justify-center mb-10 md:mb-12">
+              <div className="flex items-center gap-4 md:gap-6">
                 <Image
                   src={Logo}
                   alt="Logo Dra. Jasmin Dezotti"
                   width={132}
                   height={132}
-                  className="w-[106px] h-[106px] md:w-[123px] md:h-[123px] object-contain flex-shrink-0"
+                  className="w-[80px] h-[80px] md:w-[123px] md:h-[123px] object-contain flex-shrink-0"
                   priority
                 />
-                <div className="text-center md:text-left">
-                  <h1 className="bg-[linear-gradient(135deg,var(--color-primary),var(--color-secondary))] bg-clip-text font-nacelle text-4xl md:text-5xl lg:text-6xl font-semibold text-transparent leading-tight">
+                <div className="text-left">
+                  <h1 className="bg-[linear-gradient(135deg,var(--color-primary),var(--color-secondary))] bg-clip-text font-nacelle text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold text-transparent [-webkit-background-clip:text] leading-tight">
                     Dra. Jasmin Dezotti Lovisi
                   </h1>
-                  <p className="text-lg md:text-xl text-[var(--color-text-secondary)] mt-2">
+                  <p className="text-sm md:text-xl text-[var(--color-text-secondary)] mt-1 md:mt-2">
                     Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125602-5
                   </p>
                 </div>
@@ -156,9 +156,9 @@ export default function HeroHome() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile to avoid overlap with CTAs */}
       <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-500 ${isScrolled ? "opacity-0 translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
+        className={`hidden md:block fixed bottom-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-500 ${isScrolled ? "opacity-0 translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
           }`}
       >
         <div className="flex flex-col items-center gap-3">
