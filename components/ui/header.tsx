@@ -139,25 +139,33 @@ export default function Header() {
               </a>
             </nav>
 
-            {/* Mobile menu button */}
-            <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 transition-colors"
-              aria-label="Toggle menu"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg
-                className="w-6 h-6 text-[var(--color-primary)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Mobile Agendar button and menu button */}
+            <div className="lg:hidden flex items-center gap-2 ml-auto">
+              <a
+                href="/atendimento"
+                className="btn-sm btn-primary"
               >
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+                Agendar
+              </a>
+              <button
+                className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 transition-colors"
+                aria-label="Toggle menu"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <svg
+                  className="w-6 h-6 text-[var(--color-primary)]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
 
             {/* Action buttons */}
             <div className="hidden lg:flex items-center gap-3 ml-auto flex-shrink-0">
@@ -195,15 +203,6 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <div className="px-6 pt-4 pb-2 border-t border-[var(--color-accent)] mt-2">
-                <a
-                  href="/atendimento"
-                  className="btn btn-primary w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Agendar Consulta
-                </a>
-              </div>
             </nav>
           </div>
         </div>
