@@ -43,7 +43,7 @@ export default function HeroHome() {
                     Dra. Jasmin Dezotti Lovisi
                   </h1>
                   <p className="text-sm md:text-xl text-[var(--color-text-secondary)] mt-1 md:mt-2">
-                    Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125602-5
+                    Otorrinolaringologista <span className="text-[var(--color-primary)]/60">•</span> CRM 52125602-5 <span className="text-[var(--color-primary)]/60">•</span> RQE 60167
                   </p>
                 </div>
               </div>
@@ -58,8 +58,8 @@ export default function HeroHome() {
                   data-aos="fade-up"
                   data-aos-delay={100}
                 >
-                  Excelência para sua{" "}
-                  <span className="text-[var(--color-primary)]">saúde respiratória</span>
+                  Bem-estar para sua{" "}
+                  <span className="text-[var(--color-primary)]">respiração, audição e voz</span>
                 </h2>
                 <p
                   className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6"
@@ -80,7 +80,7 @@ export default function HeroHome() {
                       <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                     </svg>
                     <p className="text-sm text-[var(--color-text-secondary)]">
-                      <span className="font-medium text-[var(--color-text-primary)]">Graduação:</span> Faculdade Souza Marques
+                      <span className="font-medium text-[var(--color-text-primary)]">Fellow:</span> Cirurgia de base do crânio e rinologia avançada UERJ / HUPE
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -104,7 +104,7 @@ export default function HeroHome() {
                       <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                     </svg>
                     <p className="text-sm text-[var(--color-text-secondary)]">
-                      <span className="font-medium text-[var(--color-text-primary)]">Especialização em Rinologia:</span> UERJ / HUPE <span className="text-[var(--color-primary)]/70 italic">(conclusão 04/27)</span>
+                      <span className="font-medium text-[var(--color-text-primary)]">Observership:</span> Cleveland Clinic em Pneumologia <span className="text-[var(--color-primary)]/70">(EUA)</span>
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -116,7 +116,7 @@ export default function HeroHome() {
                       <path d="M10 0L0 5l10 5 10-5-10-5zm0 13L3 9.5v4.25c0 1.5 3.134 2.75 7 2.75s7-1.25 7-2.75V9.5L10 13z" />
                     </svg>
                     <p className="text-sm text-[var(--color-text-secondary)]">
-                      <span className="font-medium text-[var(--color-text-primary)]">Observership:</span> Cleveland Clinic em Pneumologia <span className="text-[var(--color-primary)]/70">(EUA)</span>
+                      <span className="font-medium text-[var(--color-text-primary)]">Graduação:</span> Faculdade Souza Marques
                     </p>
                   </div>
                 </div>

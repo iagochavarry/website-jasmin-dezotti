@@ -200,7 +200,7 @@ export default function AboutDoctor() {
                                                 Dra. Jasmin Dezotti
                                             </h3>
                                             <p className="text-sm text-[var(--color-text-secondary)]">
-                                                CRM 52125602-5
+                                                CRM 52125602-5 - RQE 60167
                                             </p>
                                         </div>
                                     </div>
