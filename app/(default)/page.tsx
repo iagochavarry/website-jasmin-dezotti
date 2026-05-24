@@ -25,7 +25,6 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import Hero from "@/components/hero-home";
 import AboutDoctor from "@/components/about-doctor";
-import Workflows from "@/components/workflows";
 import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
@@ -46,7 +45,6 @@ export default function Home() {
       <Header />
       <Hero />
       <AboutDoctor />
-      <Workflows />
       <Features />
       <Testimonials />
       <Cta />
