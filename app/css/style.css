@@ -1,8 +1,7 @@
 @import 'tailwindcss';
 
-/* Additional styles */
-@import './additional-styles/utility-patterns.css' layer(components);
-@import './additional-styles/theme.css';
+/* V2 design system */
+@import './additional-styles/v2.css';
 
 @plugin "@tailwindcss/forms" {
   strategy: base;
@@ -10,20 +9,21 @@
 
 @theme {
   --font-inter: var(--font-inter), sans-serif;
-  --font-nacelle: var(--font-nacelle), sans-serif;
+  --font-cormorant: var(--font-cormorant), "Times New Roman", serif;
 
-  /* Medical Theme - Color Palette */
-  --color-background-primary: #F9F7F4;
-  --color-background-secondary: #E8E3DC;
-  --color-primary: #3A6373;
-  --color-primary-light: #4A7383;
-  --color-primary-dark: #2A5363;
-  --color-secondary: #9DAE91;
-  --color-secondary-light: #B5C5A9;
-  --color-accent: #D6CBBE;
-  --color-text-primary: #333333;
-  --color-text-secondary: #5C7A89;
-  --color-text-muted: #7A8B99;
+  /* V2 palette */
+  --color-cream: #F1E3D3;
+  --color-cream-2: #EAD6C2;
+  --color-paper: #FBF6EF;
+  --color-sage: #6E7563;
+  --color-sage-deep: #565C4D;
+  --color-sage-soft: #8E957F;
+  --color-terra: #C07A52;
+  --color-terra-deep: #A86340;
+  --color-ink: #3A3D34;
+  --color-line: rgba(110, 117, 99, 0.18);
+  --color-line-warm: rgba(192, 122, 82, 0.35);
+  --color-accent-soft: #E6BFA6;
 
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5384;
@@ -61,59 +61,14 @@
   --animate-gradient: gradient 6s linear infinite;
 
   @keyframes shine {
-    0% {
-      top: 0;
-      transform: scaleY(5);
-      opacity: 0;
-    }
-
-    10% {
-      opacity: 0.8;
-    }
-
-    20% {
-      top: 100%;
-      transform: scaleY(10);
-      opacity: 0;
-    }
-
-    100% {
-      top: 100%;
-      transform: scaleY(1);
-      opacity: 0;
-    }
+    0%   { top: 0; transform: scaleY(5); opacity: 0; }
+    10%  { opacity: 0.8; }
+    20%  { top: 100%; transform: scaleY(10); opacity: 0; }
+    100% { top: 100%; transform: scaleY(1); opacity: 0; }
   }
 
   @keyframes gradient {
-    to {
-      background-position: 200% center;
-    }
-  }
-
-  @keyframes gentleFloat {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(6px);
-    }
-  }
-
-  @keyframes gentlePulse {
-
-    0%,
-    100% {
-      opacity: 0.4;
-      transform: scale(1);
-    }
-
-    50% {
-      opacity: 0.7;
-      transform: scale(1.1);
-    }
+    to { background-position: 200% center; }
   }
 }
 
@@ -121,9 +76,6 @@
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
   html {
@@ -135,15 +87,15 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-accent, currentColor);
+    border-color: var(--color-line, currentColor);
   }
 
   body {
-    background-color: var(--color-background-primary);
-    color: var(--color-text-primary);
+    background-color: var(--color-cream);
+    color: var(--color-ink);
   }
 
-  /* Scroll offset para compensar header fixo */
+  /* Scroll offset to compensate fixed header */
   section[id] {
     scroll-margin-top: 6rem;
   }
