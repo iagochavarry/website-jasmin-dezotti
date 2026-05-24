@@ -1,5 +1,3 @@
-import ScrollIndicator from "@/components/scroll-indicator";
-
 export default function Features() {
   return (
     <section id="diferenciais" className="relative">
@@ -165,7 +163,6 @@ export default function Features() {
           </div>
         </div>
       </div>
-      <ScrollIndicator text="Depoimentos de Pacientes" />
     </section>
   );
 }

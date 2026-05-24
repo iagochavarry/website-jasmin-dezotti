@@ -30,7 +30,6 @@ import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
 import StructuredData from "@/components/seo/structured-data";
-import SoonAvailable from "@/components/soon-available";
 
 export default function Home() {
   // return (

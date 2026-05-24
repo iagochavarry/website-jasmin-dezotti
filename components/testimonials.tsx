@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import useMasonry from "@/utils/useMasonry";
-import ScrollIndicator from "@/components/scroll-indicator";
 
 const testimonials = [
   {
@@ -194,7 +193,6 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-      <ScrollIndicator text="Agendar Consulta" />
     </section>
   );
 }

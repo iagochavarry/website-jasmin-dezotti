@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 // Mock data - substituir por busca em CMS/banco de dados
 const blogPostsData: Record<string, any> = {
@@ -384,12 +383,6 @@ export default async function BlogPost({ params }: PageProps) {
             <section>
                 <div className="mx-auto max-w-4xl px-4 sm:px-6">
                     <div className="py-12 md:py-20">
-                        <Breadcrumbs
-                            items={[
-                                { label: "Blog", href: "/blog" },
-                                { label: post.title }
-                            ]}
-                        />
                         {/* Back Button */}
                         <Link
                             href="/blog"

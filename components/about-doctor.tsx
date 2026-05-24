@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ProfileImage from "@/public/images/profile.png";
-import ScrollIndicator from "@/components/scroll-indicator";
 
 export default function AboutDoctor() {
     return (
@@ -268,7 +267,6 @@ export default function AboutDoctor() {
                     </div>
                 </div>
             </div>
-            <ScrollIndicator text="Tratamentos Especializados" />
         </section>
     );
 }

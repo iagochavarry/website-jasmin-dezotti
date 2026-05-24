@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Breadcrumbs from "@/components/ui/breadcrumbs";
 
 export const metadata = {
     title: "Blog - Dra. Jasmin Dezotti Lovisi | Otorrinolaringologista",
@@ -46,7 +45,6 @@ export default function Blog() {
             <section>
                 <div className="mx-auto max-w-6xl px-4 sm:px-6">
                     <div className="py-12 md:py-20">
-                        <Breadcrumbs items={[{ label: "Blog" }]} />
                         <div className="mx-auto max-w-3xl text-center">
                             <div className="inline-flex items-center gap-3 pb-3 before:h-px before:w-8 before:bg-linear-to-r before:from-transparent before:to-[var(--color-secondary)] after:h-px after:w-8 after:bg-linear-to-l after:from-transparent after:to-[var(--color-secondary)]">
                                 <span className="inline-flex bg-linear-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-transparent">

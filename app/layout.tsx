@@ -2,7 +2,7 @@ import "./css/style.css";
 
 import { Inter, Cormorant_Garamond } from "next/font/google";
 
-import ConditionalHeader from "@/components/ui/conditional-header";
+import Header from "@/components/ui/header";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
 const inter = Inter({
@@ -48,7 +48,7 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip relative">
-          <ConditionalHeader />
+          <Header />
           {children}
         </div>
       </body>
