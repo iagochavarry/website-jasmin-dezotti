@@ -1,8 +1,6 @@
 import "./css/style.css";
 
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
-import Image from "next/image";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 
 import ConditionalHeader from "@/components/ui/conditional-header";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
@@ -13,30 +11,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const nacelle = localFont({
-  src: [
-    {
-      path: "../public/fonts/nacelle-regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/nacelle-italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/nacelle-semibold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/nacelle-semibolditalic.woff2",
-      weight: "600",
-      style: "italic",
-    },
-  ],
-  variable: "--font-nacelle",
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -65,21 +44,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${nacelle.variable} bg-[var(--color-background-primary)] font-inter text-base text-[var(--color-text-primary)] antialiased relative`}
+        className={`${inter.variable} ${cormorant.variable} bg-[var(--color-cream)] font-inter text-base text-[var(--color-ink)] antialiased relative`}
       >
         <GoogleAnalytics />
-        {/* Background Mesh */}
-        <div className="fixed inset-0 -z-10 opacity-40">
-          <Image
-            src="/images/mesh2.jpg"
-            alt=""
-            fill
-            className="object-cover blur-[2px] saturate-50"
-            quality={50}
-            priority
-          />
-        </div>
-
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip relative">
           <ConditionalHeader />
           {children}
