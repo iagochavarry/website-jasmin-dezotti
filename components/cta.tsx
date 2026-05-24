@@ -1,44 +1,48 @@
 export default function Cta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2
-              className="pb-4 font-nacelle text-3xl font-semibold text-white md:text-4xl"
-              data-aos="fade-up"
-            >
-              Pronto para cuidar da sua saúde?
-            </h2>
-            <p
-              className="mb-8 text-lg text-white/90"
-              data-aos="fade-up"
-              data-aos-delay={200}
-            >
-              Agende sua consulta e dê o primeiro passo para respirar melhor e viver com mais qualidade.
+    <section className="cta-band" id="agendar">
+      <div className="container">
+        <div className="cta-card">
+          <div>
+            <span className="section-label">Marque sua avaliação</span>
+            <h3>
+              Pronta para te <em>escutar</em>.
+              <br />
+              Hoje, com calma.
+            </h3>
+            <p>
+              Agende sua consulta presencial — atendimento particular e por
+              reembolso, com retorno orientado quando indicado.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div data-aos="fade-up" data-aos-delay={400}>
-                <a
-                  className="btn bg-white text-[var(--color-primary)] hover:bg-white/90 w-full sm:w-auto shadow-lg hover:shadow-xl hover:scale-105 font-semibold transition-all duration-300"
-                  href="/atendimento"
-                >
-                  Agendar Consulta
-                </a>
-              </div>
-              <div data-aos="fade-up" data-aos-delay={500}>
-                <a
-                  className="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-[var(--color-primary)] w-full sm:w-auto inline-flex items-center gap-2 transition-all duration-300 hover:scale-105"
-                  href="tel:+5521997734282"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  Ligar Agora
-                </a>
-              </div>
+            <div className="cta-actions">
+              <a
+                href="https://wa.me/5521997734282"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Agendar pelo WhatsApp
+                <svg className="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14" />
+                  <path d="m13 5 7 7-7 7" />
+                </svg>
+              </a>
+              {/* TODO(content): confirm Doctoralia URL */}
+              <a href="#" className="btn btn-ghost">
+                Doctoralia
+              </a>
             </div>
           </div>
+          <dl className="cta-info">
+            <dt>Telefone</dt>
+            <dd>(21) 99773-4282</dd>
+            {/* TODO(content): confirm Instagram handle */}
+            <dt>Instagram</dt>
+            <dd>@jasminlovisi.otorrino</dd>
+            {/* TODO(content): confirm clinic address */}
+            <dt>Endereço</dt>
+            <dd>Barra da Tijuca, Rio de Janeiro</dd>
+          </dl>
         </div>
       </div>
     </section>
