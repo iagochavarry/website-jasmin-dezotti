@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const ITEMS = [
@@ -34,10 +35,6 @@ export default function Differentials() {
               Uma consulta que <em>realmente</em> escuta.
             </h2>
           </div>
-          <p className="section-intro">
-            Pequenos cuidados que mudam totalmente a experiência médica — do
-            agendamento ao retorno.
-          </p>
         </div>
 
         <div className="diff-grid">
@@ -56,12 +53,13 @@ export default function Differentials() {
 
           <aside className="diff-aside">
             <div className="visual">
-              <svg width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                <circle cx="60" cy="60" r="48" strokeDasharray="3 6" />
-                <circle cx="60" cy="60" r="32" />
-                <path d="M60 28v64M28 60h64" />
-                <circle cx="60" cy="60" r="6" fill="#E6BFA6" stroke="none" />
-              </svg>
+              <Image
+                src="/images/v2/VerticeBotafogoConsultorio.webp"
+                alt="Consultório Vértice, Botafogo"
+                fill
+                sizes="(max-width: 980px) 100vw, 360px"
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
             </div>
             <h4>
               Tecnologia clínica

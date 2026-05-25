@@ -786,13 +786,13 @@ export default function Footer() {
           <div>
             <div className="foot-h">Contato</div>
             <ul className="foot-list">
-              <li>(21) 99773-4282</li>
+              <li>(21) 99757-7798</li>
               {/* TODO(content): confirm email with Jasmin */}
-              <li>contato@jasminlovisi.com.br</li>
+              <li>jasmindezotti.otorrino@gmail.com</li>
               {/* TODO(content): confirm Instagram handle */}
               <li>@jasminlovisi.otorrino</li>
               {/* TODO(content): confirm clinic address */}
-              <li>Barra da Tijuca, RJ</li>
+              <li>Botafogo, RJ</li>
             </ul>
           </div>
 
@@ -816,7 +816,7 @@ export default function Footer() {
                 <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" />
               </svg>
             </a>
-            <a href="https://wa.me/5521997734282" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5521997577798" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 11.5a8.4 8.4 0 0 1-12.8 7.2L3 21l2.4-5A8.4 8.4 0 1 1 21 11.5z" />
               </svg>
@@ -1230,10 +1230,6 @@ export default function Specialties() {
               em <em>ouvido, nariz e garganta</em>.
             </h2>
           </div>
-          <p className="section-intro">
-            Do diagnóstico ao acompanhamento, abordagens clínicas e procedimentos
-            minimamente invasivos para devolver conforto e qualidade de vida.
-          </p>
         </div>
 
         <div className="spec-grid">
@@ -1584,7 +1580,7 @@ export default function Cta() {
             </p>
             <div className="cta-actions">
               <a
-                href="https://wa.me/5521997734282"
+                href="https://wa.me/5521997577798"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -1603,7 +1599,7 @@ export default function Cta() {
           </div>
           <dl className="cta-info">
             <dt>Telefone</dt>
-            <dd>(21) 99773-4282</dd>
+            <dd>(21) 99757-7798</dd>
             {/* TODO(content): confirm Instagram handle */}
             <dt>Instagram</dt>
             <dd>@jasminlovisi.otorrino</dd>

@@ -41,21 +41,21 @@ export default function Footer() {
           <div>
             <div className="foot-h">Contato</div>
             <ul className="foot-list">
-              <li>(21) 99773-4282</li>
+              <li>(21) 99757-7798</li>
               {/* TODO(content): confirm email with Jasmin */}
-              <li>contato@jasminlovisi.com.br</li>
+              <li>jasmindezotti.otorrino@gmail.com</li>
               {/* TODO(content): confirm Instagram handle */}
               <li>@jasminlovisi.otorrino</li>
               {/* TODO(content): confirm clinic address */}
-              <li>Barra da Tijuca, RJ</li>
+              <li>Botafogo, RJ</li>
             </ul>
           </div>
 
           <div>
             <div className="foot-h">Atendimento</div>
             <ul className="foot-list">
-              <li>Seg — Sex · 09h às 19h</li>
-              <li>Sábado · 09h às 13h</li>
+              <li>OTO Grupo</li>
+              <li>Pires de Melo</li>
               <li>Particular &amp; reembolso</li>
             </ul>
           </div>
@@ -77,7 +77,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/5521997734282"
+              href="https://wa.me/5521997577798?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin."
               aria-label="WhatsApp"
               target="_blank"
               rel="noopener noreferrer"

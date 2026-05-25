@@ -22,16 +22,16 @@ export default function AboutDoctor() {
             </h2>
 
             <p className="sobre-quote">
-              Cada paciente carrega uma história — minha função é escutar com
-              calma, examinar com precisão e devolver respostas que façam sentido.
+              Cada paciente carrega uma história, minha função é escutar com
+              calma, e diagnosticar com precisão.
             </p>
 
             <div className="sobre-body">
               <p>
                 Médica otorrinolaringologista formada pela Faculdade Souza
                 Marques, com residência médica em Otorrinolaringologia pela
-                UERJ, no Hospital Universitário Pedro Ernesto — referência em
-                ensino, assistência e formação clínica e cirúrgica no Rio de
+                UERJ, no Hospital Universitário Pedro Ernesto, referência em
+                ensino, e formação clínica e cirúrgica no Rio de
                 Janeiro.
               </p>
               <p>
@@ -44,9 +44,9 @@ export default function AboutDoctor() {
               <p>
                 Com aprofundamento em anatomia cirúrgica aplicada e cursos de
                 dissecção em mastoide, rinologia e base de crânio, a Dra. Jasmin
-                direcionou sua subespecialização para <strong>Rinologia</strong>,
+                direcionou sua subespecialização para <strong>Rinologia e Base de Crânio</strong>,
                 com fellowship no HUPE/UERJ. Atua no manejo clínico e cirúrgico
-                de rinossinusites, desvios septais e doenças nasossinusais, além
+                de rinossinusites, desvios septais, doenças nasossinusais, perdas auditivas, ronco e apneia, além
                 de trabalhos científicos e apresentações em congressos no Brasil.
               </p>
               <p>

@@ -13,11 +13,6 @@ export default function Specialties() {
               em <em>ouvido, nariz e garganta</em>.
             </h2>
           </div>
-          <p className="section-intro">
-            Do diagnóstico ao acompanhamento, abordagens clínicas e
-            procedimentos minimamente invasivos para devolver conforto e
-            qualidade de vida.
-          </p>
         </div>
 
         <div className="spec-grid">
@@ -30,7 +25,7 @@ export default function Specialties() {
               tonturas com avaliação audiológica precisa.
             </p>
             <ul className="spec-list">
-              <li>Otoscopia digital com registro</li>
+              <li>Otoscopia digital</li>
               <li>Audiometria e impedanciometria</li>
               <li>Vertigem e labirintite</li>
             </ul>
@@ -45,9 +40,9 @@ export default function Specialties() {
               videoendoscopia em consultório e plano terapêutico individualizado.
             </p>
             <ul className="spec-list">
-              <li>Endoscopia nasal e nasofibrolaringoscopia</li>
-              <li>Rinite alérgica &amp; sinusite crônica</li>
-              <li>Apneia do sono e roncopatia</li>
+              <li>Endoscopia nasal</li>
+              <li>Rinite alérgica</li>
+              <li>Sinusite crônica</li>
             </ul>
           </article>
 
@@ -63,6 +58,21 @@ export default function Specialties() {
               <li>Videolaringoscopia</li>
               <li>Disfonias e cuidados com a voz</li>
               <li>Amigdalite e faringite</li>
+            </ul>
+          </article>
+
+          <article className="spec-card">
+            <span className="num">Sono</span>
+            <Image className="spec-icon" src="/images/v2/SleepingSnorring.png" alt="" width={76} height={76} />
+            <h3>Sono &amp; Respiração</h3>
+            <p>
+              Investigação e tratamento de ronco e apneia obstrutiva do sono,
+              com plano individualizado — clínico, cirúrgico ou combinado.
+            </p>
+            <ul className="spec-list">
+              <li>Polissonografia</li>
+              <li>Acompanhamento de CPAP</li>
+              <li>Cirurgias faríngeas e nasais para apneia</li>
             </ul>
           </article>
         </div>

@@ -25,8 +25,8 @@ export default function Header() {
             className="brand-mark"
             src="/images/v2/logo-submark-white.png"
             alt=""
-            width={64}
-            height={64}
+            width={76}
+            height={76}
             priority
           />
           <span className="brand-text">

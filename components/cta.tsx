@@ -16,7 +16,7 @@ export default function Cta() {
             </p>
             <div className="cta-actions">
               <a
-                href="https://wa.me/5521997734282"
+                href="https://wa.me/5521997577798?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -27,15 +27,11 @@ export default function Cta() {
                   <path d="m13 5 7 7-7 7" />
                 </svg>
               </a>
-              {/* TODO(content): confirm Doctoralia URL */}
-              <a href="#" className="btn btn-ghost">
-                Doctoralia
-              </a>
             </div>
           </div>
           <dl className="cta-info">
             <dt>Telefone</dt>
-            <dd>(21) 99773-4282</dd>
+            <dd>(21) 99757-7798</dd>
             {/* TODO(content): confirm Instagram handle */}
             <dt>Instagram</dt>
             <dd>@jasminlovisi.otorrino</dd>
