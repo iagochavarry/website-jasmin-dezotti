@@ -33,7 +33,7 @@ export default function StructuredData() {
         "areaServed": ["Rio de Janeiro", "Madureira", "Zona Sul", "Botafogo"],
         "sameAs": [
             "https://wa.me/+5521997180604",
-            "https://wa.me/+5521997734282"
+            "https://wa.me/+5521997577798"
         ],
         "description": "Otorrinolaringologista especializada em rinologia, otologia e laringologia. Atendimento de excelência e tratamentos personalizados no Rio de Janeiro.",
         "hasOfferCatalog": {

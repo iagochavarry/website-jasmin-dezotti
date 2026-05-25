@@ -37,3 +37,6 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# V2 design mockup source (reference only; not part of the app)
+/Jasmin Website V2/

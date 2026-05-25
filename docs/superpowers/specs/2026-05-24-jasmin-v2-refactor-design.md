@@ -210,13 +210,13 @@ Body bg: `var(--color-cream)`; body text: `var(--color-ink)`.
 | Especialidades 3 cards | Otologia/Rinologia/Laringe — copy from V1 `workflows.tsx` 3 cards |
 | Differentials 5 items | Pick 5 from V1 `features.tsx` 6 cards: Formação de Excelência, Especialização em Rinologia, Experiência em Grandes Centros, Aprofundamento Técnico, Atendimento Personalizado (drop Participação Científica or merge it) |
 | Testimonials 3 cards | Pick 3 from V1 `testimonials.tsx` array: Maria Silva (sinusite crônica), Carlos Mendes (audição), Ana Paula Costa (otite filho). Feature card = the most expressive of the three |
-| CTA card | Title/lede from V2; phone `(21) 99773-4282` matches V1; **Instagram / email / address remain V2 placeholders until Jasmin confirms** — leave a `TODO` comment in the JSX so it's findable |
-| Footer | V2 4-col on sage-deep; phone `(21) 99773-4282`; Instagram/email/address marked TODO until confirmed |
+| CTA card | Title/lede from V2; phone `(21) 99757-7798` matches V1; **Instagram / email / address remain V2 placeholders until Jasmin confirms** — leave a `TODO` comment in the JSX so it's findable |
+| Footer | V2 4-col on sage-deep; phone `(21) 99757-7798`; Instagram/email/address marked TODO until confirmed |
 
 ## Open content gaps (non-blocking — leave TODOs in JSX)
 
 - Instagram handle (V2 has `@jasminlovisi.otorrino` — unverified)
-- Contact email (V2 has `contato@jasminlovisi.com.br` — unverified)
+- Contact email (V2 has `jasmindezotti.otorrino@gmail.com` — unverified)
 - Clinic address (V2 has "Av. das Américas, 500 — Barra da Tijuca" — unverified)
 
 Iago will fill these in after confirming with Jasmin.

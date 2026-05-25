@@ -1,11 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 import Footer from "@/components/ui/footer";
 
 export default function DefaultLayout({
@@ -13,23 +5,10 @@ export default function DefaultLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const isSoonPage = pathname === "/";
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: "phone",
-      duration: 600,
-      easing: "ease-out-sine",
-    });
-  });
-
   return (
     <>
       <main className="relative flex grow flex-col">{children}</main>
-
-      {!isSoonPage && <Footer />}
+      <Footer />
     </>
   );
 }
