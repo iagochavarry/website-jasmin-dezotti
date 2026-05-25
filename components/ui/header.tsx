@@ -44,13 +44,18 @@ export default function Header() {
 
         <div className="nav-actions">
           <Link href="/blog" className={`nav-blog${isBlog ? " is-active" : ""}`}>Blog</Link>
-          <Link href="/#agendar" className="btn btn-primary">
+          <a
+            href="https://wa.me/5521997577798?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Jasmin."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Agendar
             <svg className="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="m13 5 7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
     </header>

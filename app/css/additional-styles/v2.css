@@ -1486,6 +1486,11 @@ footer {
   .prose-grid { grid-template-columns: 1fr; }
   .prose { grid-column: 1; max-width: none; }
 }
+@media (max-width: 700px) {
+  .site-header .brand-text { display: none; }
+  .site-header .brand-mark { width: 56px; height: 56px; flex: 0 0 56px; }
+  .nav { height: 72px; gap: 12px; }
+}
 @media (max-width: 980px) {
   .nav-links { display: none; }
   .hero-grid,
