@@ -36,9 +36,6 @@ export default function Testimonials() {
               sobre <em>a consulta</em>.
             </h2>
           </div>
-          <p className="section-intro">
-            Avaliações reais de pacientes — coletadas em plataformas verificadas.
-          </p>
         </div>
 
         <div className="testi-grid">
