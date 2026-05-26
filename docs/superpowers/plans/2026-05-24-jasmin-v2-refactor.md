@@ -1605,7 +1605,7 @@ export default function Cta() {
             <dd>@jasminlovisi.otorrino</dd>
             {/* TODO(content): confirm clinic address */}
             <dt>Endereço</dt>
-            <dd>Barra da Tijuca, Rio de Janeiro</dd>
+            <dd>Botafogo, Rio de Janeiro</dd>
           </dl>
         </div>
       </div>
