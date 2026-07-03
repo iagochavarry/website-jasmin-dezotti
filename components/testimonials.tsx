@@ -4,7 +4,7 @@ const TESTIMONIALS: { feature?: boolean; quote: string; initial: string; name: s
     quote:
       "Depois de anos sofrendo com sinusite crônica, finalmente encontrei alívio. A Dra. Jasmin foi extremamente atenciosa, explicou todo o tratamento e me acompanhou em cada etapa. Hoje respiro muito melhor e minha qualidade de vida mudou completamente.",
     initial: "M",
-    name: "Maria Silva",
+    name: "Maria Neves",
     meta: "Rio de Janeiro · 2025",
   },
   {

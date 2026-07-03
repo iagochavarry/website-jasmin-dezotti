@@ -62,7 +62,7 @@ export default function Blog() {
 
       <section className="post-grid-wrap">
         <div className="container">
-          <div className="post-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))" }}>
+          <div className="post-grid">
             {POSTS.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="post-card article">
                 <div className="post-cover">
