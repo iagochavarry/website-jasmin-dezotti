@@ -78,14 +78,14 @@ export default function AboutDoctor() {
           <div className="traj-grid">
             <div className="traj-col">
               <article className="traj-card">
-                <span className="traj-tag">Graduação</span>
-                <h4>Faculdade Souza Marques</h4>
-                <span className="traj-sub">Doutorado em Medicina</span>
+                <span className="traj-tag">Experiência clínica</span>
+                <h4>Atuação atual</h4>
+                <span className="traj-sub">Rio de Janeiro</span>
                 <ul className="traj-list">
-                  <li>Estágio · Centro de Tratamento de Queimados — Hospital Federal do Andaraí</li>
-                  <li>Estágio em pesquisa · UFRJ — Neuroimunologia</li>
-                  <li>Estágio em Terapia Intensiva · Rede D&apos;Or</li>
-                  <li><strong>Observership</strong> · Cleveland Clinic, Pneumologia (EUA)</li>
+                  <li><strong>UERJ · Hospital Universitário Pedro Ernesto</strong></li>
+                  <li><strong>Clínica Lilla · Praia do Flamengo</strong></li>
+                  <li>Clínica São Marcos · Laranjeiras</li>
+                  <li>OTO Grupo · Madureira</li>
                 </ul>
               </article>
 
@@ -94,8 +94,9 @@ export default function AboutDoctor() {
                 <h4>Cursos de dissecção</h4>
                 <span className="traj-sub">Anatomia cirúrgica aplicada</span>
                 <ul className="traj-list">
-                  <li>Dissecção de Mastoide · UFRJ</li>
-                  <li>Dissecção de Rinologia e Base de Crânio · CETEB</li>
+                  <li>Dissecção de Mastoide · UFRJ (2025)</li>
+                  <li>Dissecção de Rinologia e Base de Crânio · CETEB (2025)</li>
+                  <li><strong>Monitora</strong> · Dissecção de Rinologia e Base de Crânio, CETEB (2026)</li>
                 </ul>
               </article>
             </div>
@@ -128,19 +129,22 @@ export default function AboutDoctor() {
                 <h4>Trabalhos científicos</h4>
                 <span className="traj-sub">Brasil</span>
                 <ul className="traj-list">
+                  <li><strong>Non-Polysomnographic Estimation of AHI Severity Using Actigraphy and Demographic Data</strong> (2026)</li>
                   <li>Congresso FORL · São Paulo</li>
                   <li>Sociedade de Otorrinolaringologia · Rio de Janeiro</li>
                 </ul>
               </article>
 
               <article className="traj-card">
-                <span className="traj-tag">Experiência clínica</span>
-                <h4>Atuação atual</h4>
-                <span className="traj-sub">Rio de Janeiro &amp; Niterói</span>
+                <span className="traj-tag">Formação</span>
+                <h4>Formação médica</h4>
+                <span className="traj-sub">Graduação, estágios e observership</span>
                 <ul className="traj-list">
-                  <li>UERJ · Hospital Universitário Pedro Ernesto</li>
-                  <li>OTO Grupo · Ipanema, Barra, Tijuca e Madureira</li>
-                  <li>Pires de Melo · Niterói</li>
+                  <li><strong>Graduação</strong> · Faculdade Souza Marques</li>
+                  <li>Observership · Cleveland Clinic (2018)</li>
+                  <li>Pesquisa · UFRJ — Neuroimunologia (2018)</li>
+                  <li>Estágio · Centro de Queimados, Hospital do Andaraí (2020)</li>
+                  <li>Terapia Intensiva · Rede D&apos;Or (2022)</li>
                 </ul>
               </article>
             </div>
