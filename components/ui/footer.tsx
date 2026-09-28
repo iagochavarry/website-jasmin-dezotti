@@ -54,8 +54,10 @@ export default function Footer() {
           <div>
             <div className="foot-h">Atendimento</div>
             <ul className="foot-list">
+              <li>HUPE · UERJ</li>
+              <li>Clínica Lilla</li>
+              <li>Centro Médico Samaritano</li>
               <li>OTO Grupo</li>
-              <li>Pires de Melo</li>
               <li>Particular &amp; reembolso</li>
             </ul>
           </div>

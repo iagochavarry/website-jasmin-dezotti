@@ -84,7 +84,7 @@ export default function AboutDoctor() {
                 <ul className="traj-list">
                   <li><strong>UERJ · Hospital Universitário Pedro Ernesto</strong></li>
                   <li><strong>Clínica Lilla · Praia do Flamengo</strong></li>
-                  <li>Clínica São Marcos · Laranjeiras</li>
+                  <li>Centro Médico Samaritano · Barra</li>
                   <li>OTO Grupo · Madureira</li>
                 </ul>
               </article>
@@ -96,7 +96,7 @@ export default function AboutDoctor() {
                 <ul className="traj-list">
                   <li>Dissecção de Mastoide · UFRJ (2025)</li>
                   <li>Dissecção de Rinologia e Base de Crânio · CETEB (2025)</li>
-                  <li><strong>Monitora</strong> · Dissecção de Rinologia e Base de Crânio, CETEB (2026)</li>
+                  <li>Monitora · Dissecção de Rinologia e Base de Crânio, CETEB (2026)</li>
                 </ul>
               </article>
             </div>
@@ -140,7 +140,7 @@ export default function AboutDoctor() {
                 <h4>Formação médica</h4>
                 <span className="traj-sub">Graduação, estágios e observership</span>
                 <ul className="traj-list">
-                  <li><strong>Graduação</strong> · Faculdade Souza Marques</li>
+                  <li>Graduação · Faculdade Souza Marques</li>
                   <li>Observership · Cleveland Clinic (2018)</li>
                   <li>Pesquisa · UFRJ — Neuroimunologia (2018)</li>
                   <li>Estágio · Centro de Queimados, Hospital do Andaraí (2020)</li>
