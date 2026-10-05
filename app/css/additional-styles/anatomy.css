@@ -1,0 +1,538 @@
+/* ────────────────────────────────────────────────────────────────────────
+   3D procedure pages (/cirurgias/*): hero, interactive viewer, info blocks.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.proc-hero { padding: 150px 0 36px; position: relative; overflow: hidden; }
+.proc-hero::before {
+  content: "";
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  right: -220px;
+  top: -200px;
+  background: radial-gradient(closest-side, rgba(192, 122, 82, 0.1), transparent 70%);
+  pointer-events: none;
+}
+.proc-hero .eyebrow { margin-bottom: 22px; }
+.proc-hero h1 {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-size: clamp(44px, 5.6vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -0.005em;
+  color: var(--color-sage-deep);
+  margin: 0 0 16px;
+}
+.proc-hero h1 em { font-style: italic; font-weight: 300; color: var(--color-terra); }
+.proc-hero .lede {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--color-sage-deep);
+  max-width: 620px;
+  margin: 0;
+}
+
+.proc-viewer { padding: 8px 0 72px; }
+
+/* ───────── Viewer shell ───────── */
+.anat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-areas:
+    "rail rail"
+    "stage panel";
+  gap: 18px 20px;
+}
+.anat-rail { grid-area: rail; }
+.anat-stage { grid-area: stage; }
+.anat-panel { grid-area: panel; }
+
+.anat-rail {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.anat-rail::-webkit-scrollbar { display: none; }
+/* Edge fades appear only on the side where more content is hidden (data-fade-* set by the viewer). */
+.anat-rail, .anat-chips { --fade-l: 0px; --fade-r: 0px; }
+.anat-rail[data-fade-l="1"], .anat-chips[data-fade-l="1"] { --fade-l: 28px; }
+.anat-rail[data-fade-r="1"], .anat-chips[data-fade-r="1"] { --fade-r: 28px; }
+@media (max-width: 900px) {
+  .anat-rail {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+  }
+}
+.anat-rail button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 16px 9px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: rgba(251, 246, 239, 0.6);
+  flex: none;
+  color: var(--color-sage-deep);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.anat-rail button .n {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--color-terra);
+  font-variant-numeric: tabular-nums;
+}
+.anat-rail button:hover { border-color: var(--color-sage-soft); }
+.anat-rail button.is-done { background: rgba(251, 246, 239, 0.9); }
+.anat-rail button.is-active {
+  background: var(--color-sage-deep);
+  border-color: var(--color-sage-deep);
+  color: var(--color-paper);
+}
+.anat-rail button.is-active .n { color: var(--color-accent-soft); }
+
+/* Stage */
+.anat-stage {
+  position: relative;
+  height: clamp(460px, 74vh, 780px);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 50% 38%, #585E50 0%, #41463B 48%, #2C2F28 100%);
+  box-shadow: var(--shadow-md);
+  isolation: isolate;
+}
+.anat-stage:focus-visible { outline: 2px solid var(--color-terra); outline-offset: 3px; }
+.anat-canvas { position: absolute; inset: 0; cursor: grab; }
+.anat-canvas:active { cursor: grabbing; }
+.anat-canvas canvas { display: block; width: 100% !important; height: 100% !important; }
+
+.anat-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+/* Each label is three absolutely positioned parts (leader, dot, pill); labels.ts writes their transforms. */
+.anat-label {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.anat-label.is-on { opacity: 1; }
+.anat-label > span { position: absolute; left: 0; top: 0; will-change: transform; }
+.anat-label-line {
+  height: 1px;
+  transform-origin: 0 50%;
+  background: rgba(251, 246, 239, 0.45);
+}
+.anat-label-dot {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: #FFB27A;
+  box-shadow: 0 0 0 4px rgba(255, 178, 122, 0.25), 0 0 14px rgba(255, 178, 122, 0.55);
+}
+.anat-label-text {
+  white-space: nowrap;
+  font-size: 12.5px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--color-paper);
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(30, 32, 27, 0.78);
+  border: 1px solid rgba(251, 246, 239, 0.18);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.anat-tools {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+.anat-tools button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-paper);
+  background: rgba(30, 32, 27, 0.5);
+  border: 1px solid rgba(251, 246, 239, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.anat-tools button:hover { background: rgba(30, 32, 27, 0.75); }
+.anat-tools button[aria-pressed="false"] { color: rgba(251, 246, 239, 0.55); }
+
+.anat-pick {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  max-width: min(360px, calc(100% - 28px));
+  padding: 14px 40px 14px 16px;
+  border-radius: 18px;
+  background: rgba(251, 246, 239, 0.96);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-md);
+  z-index: 3;
+  animation: anat-in 0.25s ease both;
+}
+.anat-pick strong {
+  display: block;
+  font-family: var(--font-cormorant);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.15;
+  color: var(--color-sage-deep);
+  margin-bottom: 4px;
+}
+.anat-pick p { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.anat-pick-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-sage);
+  cursor: pointer;
+}
+
+.anat-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: rgba(251, 246, 239, 0.85);
+  background: rgba(30, 32, 27, 0.45);
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: anat-in 0.6s 0.4s ease both;
+}
+
+.anat-hint .narrow { display: none; }
+
+.anat-stagebar {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(30, 32, 27, 0.62);
+  border: 1px solid rgba(251, 246, 239, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-paper);
+  z-index: 2;
+}
+.anat-stagebar span {
+  min-width: 128px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.anat-stagebar em { font-style: normal; color: var(--color-accent-soft); font-variant-numeric: tabular-nums; margin-right: 4px; }
+.anat-stagebar button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-paper);
+  cursor: pointer;
+}
+.anat-stagebar button:disabled { opacity: 0.3; cursor: default; }
+.anat-stagebar button:not(:disabled):active { background: rgba(251, 246, 239, 0.12); }
+
+.anat-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: rgba(251, 246, 239, 0.85);
+  font-size: 13.5px;
+  text-align: center;
+  padding: 24px;
+}
+.anat-progress {
+  width: 180px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(251, 246, 239, 0.18);
+  overflow: hidden;
+}
+.anat-progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent-soft);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+/* Panel */
+.anat-panel { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.anat-card,
+.anat-layers {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.anat-card { padding: 26px 26px 22px; display: flex; flex-direction: column; flex: 1; animation: anat-in 0.35s ease both; }
+.anat-kicker {
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-terra);
+}
+.anat-card h2 {
+  font-family: var(--font-cormorant);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--color-sage-deep);
+  margin: 10px 0 12px;
+}
+.anat-card p { font-size: 15px; line-height: 1.65; color: var(--color-ink); margin: 0; }
+.anat-nav {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.anat-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  color: var(--color-sage-deep);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+.anat-btn:disabled { opacity: 0.35; cursor: default; }
+.anat-btn.is-primary {
+  padding: 0 18px;
+  background: var(--color-sage-deep);
+  border-color: var(--color-sage-deep);
+  color: var(--color-paper);
+}
+.anat-btn.is-primary:hover { background: var(--color-ink); }
+.anat-dots { display: flex; gap: 5px; align-items: center; }
+.anat-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-line-warm);
+  transition: width 0.25s ease, background 0.25s ease;
+}
+.anat-dots span.is-on { width: 18px; background: var(--color-terra); }
+
+.anat-layers { padding: 18px 18px 20px; }
+.anat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.anat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  font-size: 13px;
+  color: var(--color-sage);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.anat-chip .sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(58, 61, 52, 0.18);
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+.anat-chip.is-on {
+  background: var(--color-sage-deep);
+  border-color: var(--color-sage-deep);
+  color: var(--color-paper);
+}
+.anat-chip.is-on .sw { opacity: 1; }
+.anat-chip:disabled { cursor: default; opacity: 0.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anat-card, .anat-pick, .anat-hint { animation: none !important; }
+  .anat-label, .anat-dots span, .anat-progress span, .anat-btn,
+  .anat-rail button, .anat-chip, .anat-tools button { transition: none !important; }
+  .anat-rail, .anat-chips { scroll-behavior: auto; }
+}
+
+@keyframes anat-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.anat-hint { animation-name: anat-hint-in; }
+@keyframes anat-hint-in {
+  from { opacity: 0; transform: translate(-50%, 6px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Expanded (full-window) mode */
+.anat.is-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  padding: 14px;
+  background: var(--color-cream);
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow-y: auto;
+}
+.anat.is-expanded .anat-stage { height: 100%; min-height: 420px; }
+
+/* ───────── Info blocks below the viewer ───────── */
+.proc-info { padding: 0 0 110px; }
+.proc-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+.proc-block h2 {
+  font-family: var(--font-cormorant);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.12;
+  color: var(--color-sage-deep);
+  margin: 0 0 16px;
+}
+.proc-block p { font-size: 15.5px; line-height: 1.7; color: var(--color-ink); margin: 0 0 14px; }
+.proc-block ul { margin: 0 0 16px; padding-left: 20px; list-style: disc; }
+.proc-block li { font-size: 15.5px; line-height: 1.6; color: var(--color-ink); margin-bottom: 8px; }
+.proc-block li::marker { color: var(--color-terra); }
+.proc-cta {
+  background: var(--color-sage-deep);
+  color: var(--color-paper);
+  border-radius: 24px;
+  padding: 30px 28px;
+  box-shadow: var(--shadow-md);
+}
+.proc-cta h3 {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+.proc-cta h3 em { font-style: italic; color: var(--color-accent-soft); font-weight: 300; }
+.proc-cta p { font-size: 14.5px; line-height: 1.6; color: rgba(251, 246, 239, 0.85); margin: 0 0 22px; }
+.proc-cta .btn-primary { background: var(--color-paper); color: var(--color-sage-deep); }
+.proc-cta .btn-primary:hover { background: var(--color-cream); }
+.proc-note {
+  margin: 56px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-line);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-sage);
+  max-width: 880px;
+}
+.proc-note a { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ───────── Responsive ───────── */
+@media (max-width: 1100px) {
+  .proc-info-grid { grid-template-columns: 1fr 1fr; }
+  .proc-cta { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .anat {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "rail" "stage" "panel";
+    gap: 12px;
+  }
+  .anat-stage { height: clamp(360px, 60svh, 560px); border-radius: 22px; }
+  .anat-stagebar { display: inline-flex; }
+  .anat-hint { bottom: 70px; }
+  .anat-hint .wide { display: none; }
+  .anat-hint .narrow { display: inline; }
+  /* Compact bottom sheet that sits just above the stage bar. */
+  .anat-pick { left: 10px; right: 10px; bottom: 68px; max-width: none; padding: 12px 44px 12px 14px; border-radius: 16px; }
+  .anat-pick strong { font-size: 19px; }
+  .anat-pick p { font-size: 13px; line-height: 1.5; }
+  .anat-stagebar { bottom: 10px; }
+  .anat-card h2 { font-size: 26px; }
+  .anat.is-expanded { padding: 10px; grid-template-rows: auto auto auto; }
+  .anat.is-expanded .anat-stage { height: 72svh; }
+}
+@media (max-width: 700px) {
+  .proc-hero { padding: 116px 0 24px; }
+  .proc-hero .lede { font-size: 19px; }
+  .proc-viewer { padding-bottom: 56px; }
+  .proc-viewer .container { padding: 0 12px; }
+  .proc-info-grid { grid-template-columns: 1fr; gap: 36px; }
+  .anat-card { padding: 20px 18px 18px; }
+  .anat-card p { font-size: 14.5px; }
+  .anat-layers { padding: 16px 14px 16px; }
+  .anat-chip { padding: 7px 11px 7px 9px; font-size: 12.5px; }
+  .anat-label-text { font-size: 11.5px; padding: 4px 9px; }
+  .anat-label-dot { width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; }
+  .anat-hint { font-size: 11px; padding: 6px 12px; }
+  .anat-tools { top: 10px; right: 10px; gap: 6px; }
+  .anat-tools button { width: 40px; height: 40px; }
+  .anat-stage { height: clamp(380px, 58svh, 520px); }
+  .anat-card h2 { font-size: 25px; margin: 8px 0 10px; }
+  .anat-card p { font-size: 15px; line-height: 1.6; }
+  .anat-btn { height: 46px; }
+  /* Layer chips: one swipeable row instead of three wrapped ones. */
+  .anat-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 12px -14px 0;
+    padding: 2px 14px;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 calc(var(--fade-l) + 14px), #000 calc(100% - var(--fade-r) - 14px), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 calc(var(--fade-l) + 14px), #000 calc(100% - var(--fade-r) - 14px), transparent);
+  }
+  .anat-chips::-webkit-scrollbar { display: none; }
+  .anat-chip { flex: none; min-height: 40px; white-space: nowrap; }
+}
