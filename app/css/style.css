@@ -2,7 +2,7 @@
 
 /* V2 design system */
 @import './additional-styles/v2.css';
-@import './additional-styles/anatomy.css';
+@import './additional-styles/atlas.css';
 
 @plugin "@tailwindcss/forms" {
   strategy: base;

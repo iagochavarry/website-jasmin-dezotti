@@ -19,6 +19,10 @@ const nextConfig = {
                     },
                 ],
             },
+            // Anatomy models are versioned with ?v= (see MODEL_VERSION in lib/atlas/head.ts), so they can be cached for good.
+            ...(process.env.NODE_ENV === 'production'
+                ? [{ source: '/models/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }]
+                : []),
         ];
     },
     async redirects() {
@@ -34,6 +38,8 @@ const nextConfig = {
                 destination: 'https://jasmindezotti.com/:path*',
                 permanent: true,
             },
+            // The experimental surgery walkthrough was replaced by the anatomy explorer.
+            { source: '/cirurgias/septoplastia', destination: '/anatomia', permanent: false },
         ];
     },
 };
